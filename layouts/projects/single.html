@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <meta charset="utf-8">
+    <style> html{visibility: hidden;}</style>
+    {{ partial "style.html" . }}
+    {{ partial "meta.html" . }}
+    <style> html{visibility: visible;} </style>
+  </head>
+  {{ partial "navbar.html" . }}
+  <body>
+    <br>
+    <div class="content mx-5">
+      {{ .Content }}
+  	</div>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

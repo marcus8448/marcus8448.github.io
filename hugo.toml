@@ -1,0 +1,14 @@
+baseURL = 'http://marcus8448.github.io/'
+languageCode = 'en-us'
+title = 'marcus8448'
+
+[module]
+
+[[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+
+[[module.mounts]]
+    source = 'node_modules/bulma'
+    target = 'assets'
+    excludeFiles = '**.{md,json,css}'

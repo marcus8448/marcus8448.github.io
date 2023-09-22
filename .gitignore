@@ -1,0 +1,16 @@
+# Jetbrains
+.idea/
+.fleet/
+*.iml
+
+
+# Hugo generated
+resources/
+public/
+
+# Node
+node_modules/
+
+# Misc
+*.log
+*.lock
