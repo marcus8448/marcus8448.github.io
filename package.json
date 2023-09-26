@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Website",
   "homepage": "https://marcus8448.github.io/",
-  "main": "index.js",
+  "main": "content/_index.md",
   "author": "marcus8448",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {

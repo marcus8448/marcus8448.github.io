@@ -3,3 +3,20 @@
 $navbar-breakpoint: 480px;
 $footer-padding: 2rem 1.5rem 4rem;
 @import 'bulma';
+
+@media (max-width: $tablet) {
+  .only-mobile {
+    display: inherit;
+  }
+  .not-mobile {
+    display: none !important;
+  }
+}
+@media (min-width: $tablet) {
+  .only-mobile {
+    display: none !important;
+  }
+  .not-mobile {
+    display: inherit;
+  }
+}

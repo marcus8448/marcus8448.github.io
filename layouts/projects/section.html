@@ -1,18 +1,84 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-  <head>
-    <meta charset="utf-8">
-    <style> html{visibility: hidden;}</style>
-    {{ partial "style.html" . }}
-    {{ partial "meta.html" . }}
-    <style> html{visibility: visible;} </style>
-  </head>
-  {{ partial "navbar.html" . }}
-  <body>
-    <br>
-    <div class="content mx-5">
-      {{ .Content }}
-  	</div>
-    {{ partial "footer.html" . }}
-  </body>
-</html>
+{{ define "main" }}
+<div class="hero is-medium {{ .Params.heroImageType }}" style="overflow: hidden; position: relative; z-index: -2">
+    <div class="hero-body">
+        <h1 class="title">
+            {{ .Title }}
+        </h1>
+        <h3 class="subtitle">
+            {{ .Description }}
+        </h3>
+    </div>
+    <img src="{{ .Params.HeroImage }}" style="position: absolute; object-fit: cover; width: 100%; height: 100%; z-index: -1;" alt="{{ .Params.heroAlt }}"/>
+</div>
+
+<br>
+<div class="content mx-5 ">
+    {{ .Content }}
+</div>
+
+{{ with .Site.GetPage "/projects" }}
+{{ range .RegularPages }}
+<div class="columns is-mobile">
+    <div class="column is-8-fullhd is-offset-2-fullhd is-8-widescreen is-offset-2-widescreen is-10-desktop is-offset-1-desktop is-10-tablet is-offset-1-tablet is-full-mobile">
+        <div class="box">
+            <div class="media">
+                {{ if .Params.Icon }}
+                <a class="media-left" href="{{ .RelPermalink }}">
+                    <p class="image is-128x128">
+                        <img src="{{ .Params.Icon }}" alt="{{ .Title }}" style="border-radius: 12px">
+                    </p>
+                </a>
+                {{ end }}
+                <div class="media-content">
+                    <div class="content">
+                        <p class="title is-5 pb-1">
+                            <a href="{{ .RelPermalink }}" class="pr-2">{{ .Title }}</a>
+                        </p>
+                        {{ .Params.Description | .RenderString }}
+                    </div>
+                </div>
+                <div class="media-right not-mobile">
+                    {{ range .Params.languages }}
+                    <img src="/icon/{{ . }}.svg" width="24" height="24" alt="{{ . }} logo" title="{{ . | title }}" class="mx-1">
+                    {{ end }}
+                </div>
+
+                <div class="media-right">
+                    {{ if .Params.repository }}
+                    <a href="{{ .Params.repository }}" class="mx-1">
+                        <img src="/icon/github.svg" width="24" height="24" alt="GitHub logo" title="GitHub Repository">
+                    </a>
+                    <br class="only-mobile">
+                    {{ end }}
+                    {{ if .Params.modrinth }}
+                    <a href="https://modrinth.com/mod/{{ .Params.modrinth }}" class="mx-1">
+                        <img src="/icon/modrinth.svg" width="24" height="24" alt="Modrinth logo" title="Modrinth Project">
+                    </a>
+                    <br class="only-mobile">
+                    {{ end }}
+                    {{ if .Params.curseforge }}
+                    <a href="https://www.curseforge.com/minecraft/mc-mods/{{ .Params.curseforge }}" class="mx-1">
+                        <img src="/icon/curseforge.svg" width="24" height="24" alt="CurseForge logo" title="CurseForge Project">
+                    </a>
+                    <br class="only-mobile">
+                    {{ end }}
+                    {{ if .Params.docs }}
+                    <a href="{{ .Params.docs }}" class="mx-1">
+                        <img src="/icon/book.svg" width="24" height="24" alt="book" title="Documentation">
+                    </a>
+                    <br class="only-mobile">
+                    {{ end }}
+                    {{ if .Params.link }}
+                    <a href="{{ .Params.link }}" class="mx-1">
+                        <img src="/icon/external-link.svg" width="24" height="24" alt="up-right from square" title="Link to Project">
+                    </a>
+                    <br class="only-mobile">
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+{{ end }}
+{{ end }}

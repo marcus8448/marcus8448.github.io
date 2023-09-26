@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    <head>
+        <meta charset="utf-8">
+        <style> html {
+            visibility: hidden;
+        }</style>
+        <meta name="theme-color" content="#3e8ed0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ .Description }}"/>
+        <meta name="keywords" content="marcus8448"/>
+        <meta name="author" content="marcus8448"/>
+
+        {{ block "title" . }}
+        <title>marcus8448 | {{.Title}}</title>
+        <meta property="og:title" content="marcus8448 | {{ .Title }}">
+        {{ end }}
+
+        <meta property="og:description" content="{{ .Description }}">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="/">
+        <meta name="color-scheme" content="light dark">
+
+        {{ block "icons" . }}
+        <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="apple-touch-icon" href="/favicon/favicon-192x192.png">
+        {{ end }}
+
+        {{ $options := dict "transpiler" "dartsass" }}
+        {{ with resources.Get "main.scss" | toCSS $options | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+        {{ end }}
+
+        {{ with resources.Get "navbar.js" | js.Build (dict "minify" "true") }}
+        <script src="{{ .RelPermalink }}" defer></script>
+        {{ end }}
+
+        {{ block "head" . }}
+        {{ end }}
+        <style> html {
+            visibility: visible;
+        }</style>
+    </head>
+
+    <body class="has-navbar-fixed-top" style="height: 100vh;">
+        <nav class="navbar is-fixed-top is-info" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="/favicon/favicon-192x192.png" alt="marcus8448" class="pr-2">
+                    <p>marcus8448</p>
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="top-nav">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="top-nav" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="/">
+                        Home
+                    </a>
+
+                    <a class="navbar-item" href="/blog/">
+                        Blog
+                    </a>
+
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="/projects/">
+                            Projects
+                        </a>
+
+                        <div class="navbar-dropdown">
+                            {{ with .Site.GetPage "/projects" }}
+                            {{ range .RegularPages }}
+                            <a class="navbar-item" href="{{ .RelPermalink }}">
+                                {{ .Title }}
+                            </a>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <a class="navbar-item" href="https://www.youtube.com/@marcus8448">
+                        <img src="/icon/youtube.svg" width="24" height="24" alt="YouTube logo" style="filter: invert()">
+                    </a>
+                    <a class="navbar-item" href="https://github.com/marcus8448">
+                        <img src="/icon/github.svg" width="24" height="24" alt="GitHub logo" style="filter: invert()">
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        {{ block "main" . }}
+        <div class="container mt-5">
+            <div class="content mx-5">
+                {{ .Content }}
+            </div>
+        </div>
+        {{ end }}
+
+        {{ block "footer" . }}
+        <footer class="footer has-background-white-ter mt-auto">
+            <div class="content has-text-centered">
+                <p>
+                    Copyright &#169; 2022-2023 marcus8448
+                    | <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>
+                </p>
+            </div>
+        </footer>
+        {{ end }}
+    </body>
+</html>
