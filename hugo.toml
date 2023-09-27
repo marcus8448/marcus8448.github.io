@@ -9,6 +9,6 @@ title = 'marcus8448'
     target = 'assets'
 
 [[module.mounts]]
-    source = 'node_modules/bulma'
+    source = 'node_modules'
     target = 'assets'
     excludeFiles = '**.{md,json,css}'

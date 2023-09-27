@@ -7,8 +7,9 @@
 <div class="hero is-medium {{ .Params.heroType }}" style="overflow: hidden; position: relative;">
     <div class="hero-body" style="position: relative; z-index: 1;">
         <h1 class="title">
-            {{ if .Params.Icon }}
-            <img width="32" height="32" src="{{ .Params.Icon }}" alt="{{ .Title }}" style="border-radius: 12px; vertical-align: bottom;">
+            {{ if .Params.icon }}
+            <img width="32" height="32" src="{{ .Params.icon }}" alt="{{ .Title }}"
+                 style="border-radius: 12px; vertical-align: bottom;">
             {{ end }}
             {{ .Title }}
             {{ range .Params.languages }}
@@ -20,14 +21,74 @@
         </h3>
     </div>
     {{ if .Params.HeroImage }}
-    <img src="{{ .Params.HeroImage }}" style="position: absolute; object-fit: cover; width: 100%; height: 100%;" alt="{{ .Params.heroAlt }}"/>
+    <img src="{{ .Params.HeroImage }}" style="position: absolute; object-fit: cover; width: 100%; height: 100%;"
+         alt="{{ .Params.heroAlt }}"/>
     {{ end }}
 </div>
 
 <br>
 <div class="container mb-5" style="min-height: calc(100vh - 34.5rem)">
-<div class="content mx-5 ">
-    {{ .Content }}
-</div>
+    <div class="content mx-5 ">
+        {{ .Content }}
+        <h1>Links</h1>
+        <div class="columns is-flex">
+            {{ if .Params.repository }}
+            <div class="column">
+                <a href="{{ .Params.repository }}" class="mx-1">
+                    <div class="box">
+                        <img src="/icon/github.svg" width="32" height="32" alt="GitHub logo" title="GitHub Repository"
+                             style="vertical-align: middle;" class="mr-1 mb-1">
+                        <h5 style="display: contents;">Repository</h5>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+
+            {{ if .Params.modrinth }}
+            <div class="column">
+                <a href="https://modrinth.com/mod/{{ .Params.modrinth }}" class="mx-1">
+                    <div class="box">
+                        <img src="/icon/modrinth.svg" width="32" height="32" alt="Modrinth logo"
+                             title="Modrinth Project" style="vertical-align: middle;" class="mr-1 mb-1">
+                        <h5 style="display: contents;">Modrinth</h5>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+            {{ if .Params.curseforge }}
+            <div class="column">
+                <a href="https://www.curseforge.com/minecraft/mc-mods/{{ .Params.curseforge }}" class="mx-1">
+                    <div class="box">
+                        <img src="/icon/curseforge.svg" width="32" height="32" alt="CurseForge logo"
+                             title="CurseForge Project" style="vertical-align: middle;" class="mr-1 mb-1">
+                        <h5 style="display: contents;">CurseForge</h5>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+            {{ if .Params.docs }}
+            <div class="column">
+                <a href="{{ .Params.docs }}" class="mx-1">
+                    <div class="box">
+                        <img src="/icon/book.svg" width="32" height="32" alt="book" title="Documentation"
+                             style="vertical-align: middle;" class="mr-1 mb-1">
+                        <h5 style="display: contents;">Documentation</h5>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+            {{ if .Params.link }}
+            <div class="column">
+                <a href="{{ .Params.link }}" class="mx-1">
+                    <div class="box">
+                        <img src="/icon/external-link.svg" width="32" height="32" alt="up-right from square"
+                             title="Link to Project" style="vertical-align: middle;" class="mr-1 mb-1">
+                        <h5 style="display: contents;">Link</h5>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
 </div>
 {{ end }}

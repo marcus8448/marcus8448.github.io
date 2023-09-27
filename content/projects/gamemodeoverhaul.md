@@ -1,7 +1,7 @@
 ---
 title: "GamemodeOverhaul"
 date: 2019-02-16T00:00:00-00:00
-Icon: /image/gamemodeoverhaul.png
+icon: /image/gamemodeoverhaul.png
 Description: |
   A mod for Minecraft that restores command options removed in the 1.13 update.
   Also adds some shorthand commands for convenience.
@@ -13,6 +13,8 @@ languages:
   - java
   - gradle
 ---
+
+# About
 
 This was my first real mod for Minecraft, made in February 2019.
 Created in about two weeks, the original goal of this mod was just restore the removed integer `/gamemode` arguments,

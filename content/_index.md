@@ -15,6 +15,4 @@ I've been programming for many years now,
 mainly in Java where I have written multiple JavaFX applications and modifications for Minecraft. 
 
 I have also written command line applications and a web service backend using Rust,
-and have worked with embedded C and C++.
-
-
+and have worked with embedded C++.

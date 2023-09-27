@@ -18,13 +18,14 @@
 {{ with .Site.GetPage "/projects" }}
 {{ range .RegularPages }}
 <div class="columns is-mobile">
-    <div class="column is-8-fullhd is-offset-2-fullhd is-8-widescreen is-offset-2-widescreen is-10-desktop is-offset-1-desktop is-10-tablet is-offset-1-tablet is-full-mobile">
+    <div
+        class="column is-8-fullhd is-offset-2-fullhd is-8-widescreen is-offset-2-widescreen is-10-desktop is-offset-1-desktop is-10-tablet is-offset-1-tablet is-full-mobile">
         <div class="box">
             <div class="media">
-                {{ if .Params.Icon }}
+                {{ if .Params.icon }}
                 <a class="media-left" href="{{ .RelPermalink }}">
                     <p class="image is-128x128">
-                        <img src="{{ .Params.Icon }}" alt="{{ .Title }}" style="border-radius: 12px">
+                        <img src="{{ .Params.icon }}" alt="{{ .Title }}" style="border-radius: 12px">
                     </p>
                 </a>
                 {{ end }}
@@ -38,7 +39,8 @@
                 </div>
                 <div class="media-right not-mobile">
                     {{ range .Params.languages }}
-                    <img src="/icon/{{ . }}.svg" width="24" height="24" alt="{{ . }} logo" title="{{ . | title }}" class="mx-1">
+                    <img src="/icon/{{ . }}.svg" width="24" height="24" alt="{{ . }} logo" title="{{ . | title }}"
+                         class="mx-1">
                     {{ end }}
                 </div>
 
@@ -51,13 +53,15 @@
                     {{ end }}
                     {{ if .Params.modrinth }}
                     <a href="https://modrinth.com/mod/{{ .Params.modrinth }}" class="mx-1">
-                        <img src="/icon/modrinth.svg" width="24" height="24" alt="Modrinth logo" title="Modrinth Project">
+                        <img src="/icon/modrinth.svg" width="24" height="24" alt="Modrinth logo"
+                             title="Modrinth Project">
                     </a>
                     <br class="only-mobile">
                     {{ end }}
                     {{ if .Params.curseforge }}
                     <a href="https://www.curseforge.com/minecraft/mc-mods/{{ .Params.curseforge }}" class="mx-1">
-                        <img src="/icon/curseforge.svg" width="24" height="24" alt="CurseForge logo" title="CurseForge Project">
+                        <img src="/icon/curseforge.svg" width="24" height="24" alt="CurseForge logo"
+                             title="CurseForge Project">
                     </a>
                     <br class="only-mobile">
                     {{ end }}
@@ -69,7 +73,8 @@
                     {{ end }}
                     {{ if .Params.link }}
                     <a href="{{ .Params.link }}" class="mx-1">
-                        <img src="/icon/external-link.svg" width="24" height="24" alt="up-right from square" title="Link to Project">
+                        <img src="/icon/external-link.svg" width="24" height="24" alt="up-right from square"
+                             title="Link to Project">
                     </a>
                     <br class="only-mobile">
                     {{ end }}

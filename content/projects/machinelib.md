@@ -1,7 +1,7 @@
 ---
 title: "MachineLib"
 date: 2022-03-05T09:46:52-08:00
-Icon: /image/machinelib.png
+icon: /image/machinelib.png
 Description: |
   A library for Minecraft mods that simplifies the implementation of complex blocks that process resources.
 repository: https://github.com/TeamGalacticraft/MachineLib
@@ -12,6 +12,8 @@ languages:
 ---
 
 This library/mod aims to reduce the amount of boilerplate code required to implement blocks with inventories and menus.
+
+# About
 
 Before MachineLib existed, Galacticraft used [UniversalComponents](https://github.com/CottonMC/UniversalComponents)
 to handle inventories, then [LibBlockAttributes](https://github.com/AlexIIL/LibBlockAttributes).

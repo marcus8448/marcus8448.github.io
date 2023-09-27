@@ -1,7 +1,7 @@
 ---
 title: "Chat"
 date: 2023-06-12T00:00:00-00:00
-Icon: /image/chat.png
+icon: /image/chat.png
 Description: |
   An encrypted, ephemeral instant messaging app.
 repository: https://github.com/marcus8448/Chat
@@ -10,6 +10,8 @@ languages:
   - java
   - gradle
 ---
+
+# About
 
 This was a fun project that I made in approximately 2 weeks to gain more experience using JavaFX.
 This time I avoided FXML and defined the GUI in pure Java.

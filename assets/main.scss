@@ -4,7 +4,21 @@ $navbar-breakpoint: 480px;
 $footer-padding: 2rem 1.5rem 4rem;
 //$info: darken(hsl(207, 61%,  53%), 10%);
 
-@import 'bulma';
+@import 'bulma/sass/base/_all';
+@import "bulma/sass/utilities/_all";
+
+@import 'bulma/sass/elements/box';
+@import 'bulma/sass/elements/container';
+@import 'bulma/sass/elements/content';
+@import 'bulma/sass/elements/icon';
+@import 'bulma/sass/elements/image';
+@import 'bulma/sass/elements/title';
+@import 'bulma/sass/components/media';
+@import 'bulma/sass/components/navbar';
+@import 'bulma/sass/grid/columns';
+@import 'bulma/sass/helpers/_all';
+@import 'bulma/sass/layout/footer';
+@import 'bulma/sass/layout/hero';
 
 @media (max-width: $tablet) {
   .only-mobile {

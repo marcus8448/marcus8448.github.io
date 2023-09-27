@@ -1,7 +1,7 @@
 ---
 title: "Website"
 date: 2020-05-24T16:25:24-07:00
-Icon: /favicon/favicon-192x192.png
+icon: /favicon/favicon-192x192.png
 Description: |
   My portfolio/website. Built with Hugo and Bulma and hosted on GitHub Pages.
 repository: https://github.com/marcus8448/marcus8448.github.io
@@ -14,6 +14,8 @@ languages:
   - bulma
   - hugo
 ---
+
+# About
 
 My original website (2020) was generated using a single handwritten template with Jekyll.
 It had a basic navbar and not much else.
