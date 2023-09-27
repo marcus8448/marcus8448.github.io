@@ -18,10 +18,4 @@ draft: true
 
 # Features
 
-
-# Galacticraft 4
-
-
-# Galacticraft 5
-**Formerly Galacticraft: Rewoven*
-
+* 

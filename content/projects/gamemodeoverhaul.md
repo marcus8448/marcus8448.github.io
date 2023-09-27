@@ -12,11 +12,25 @@ heroType: is-light
 languages:
   - java
   - gradle
-draft: true
 ---
 
-This was my first real mod for Minecraft. 
+This was my first real mod for Minecraft, made in February 2019.
+Created in about two weeks, the original goal of this mod was just restore the removed integer `/gamemode` arguments,
+but its scope steadily expanded to other commands and aliases.
+
+Now GamemodeOverhaul is a fully configurable mod
+that supports over eight versions of Minecraft on two different mod loaders (in a shared codebase utilizing java SPI!).
+Since its initial release, GamemodeOverhaul has seen over 250,000 downloads.
 
 # Features
 
-* 
+* Restores command arguments removed in 1.13
+  * `/gamemode 0/1/2/3,s/c/a/sp`
+  * `/defaultgamemode 0/1/2/3,s/c/a/sp`
+  * `/difficulty 0/1/2/3`
+* Restores commands removed in 1.13
+  * `/toggledownfall`
+* Adds shorthand command aliases
+  * `/gm` -> `/gamemode`
+  * `/gm[s/c/a/sp]` -> `/gamemode [s/c/a/sp]`
+  * `/dgm` -> `/defaultgamemode`
