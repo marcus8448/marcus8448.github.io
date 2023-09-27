@@ -6,6 +6,8 @@ Description: |
   My portfolio/website. Built with Hugo and Bulma and hosted on GitHub Pages.
 repository: https://github.com/marcus8448/marcus8448.github.io
 link: https://marcus8448.github.io/
+heroType: is-warning
+
 languages:
   - html5
   - sass

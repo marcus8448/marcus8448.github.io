@@ -5,6 +5,7 @@ Icon: /image/machinelib.png
 Description: |
   A library for Minecraft mods that simplifies the implementation of complex blocks that process resources.
 repository: https://github.com/TeamGalacticraft/MachineLib
+heroType: is-light
 languages:
   - java
   - gradle

@@ -2,6 +2,8 @@
 
 $navbar-breakpoint: 480px;
 $footer-padding: 2rem 1.5rem 4rem;
+//$info: darken(hsl(207, 61%,  53%), 10%);
+
 @import 'bulma';
 
 @media (max-width: $tablet) {

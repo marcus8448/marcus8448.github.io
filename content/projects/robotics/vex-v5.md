@@ -6,6 +6,7 @@ Description: |
   I have participated in the [Vex Robotics Competition](https://www.vexrobotics.com/v5/competition/)
   since the 2021-2022 season (VRC Tipping Point).
 repository: https://github.com/marcus8448/VexV5
+heroType: is-light
 languages:
   - c
   - cplusplus

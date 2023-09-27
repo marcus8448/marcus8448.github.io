@@ -2,7 +2,7 @@
 title: "v5_cli"
 date: 2022-12-12T22:17:00-08:00
 Icon: /image/v5_cli.png
-heroImageType: is-light
+heroType: is-light
 Description: |
   A re-implementation of [pros-cli](https://github.com/purduesigbots/pros-cli) in Rust, adding true wireless (bluetooth) upload support.
 repository: https://github.com/marcus8448/v5_cli

@@ -8,6 +8,7 @@ Description: |
 repository: https://github.com/marcus8448/MinecraftMods
 modrinth: gamemodeoverhaul
 curseforge: gamemodeoverhaul
+heroType: is-light
 languages:
   - java
   - gradle

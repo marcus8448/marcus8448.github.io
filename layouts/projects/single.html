@@ -4,12 +4,15 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="hero is-medium {{ .Params.heroImageType }}" style="overflow: hidden; position: relative;">
+<div class="hero is-medium {{ .Params.heroType }}" style="overflow: hidden; position: relative;">
     <div class="hero-body" style="position: relative; z-index: 1;">
         <h1 class="title">
+            {{ if .Params.Icon }}
+            <img width="32" height="32" src="{{ .Params.Icon }}" alt="{{ .Title }}" style="border-radius: 12px; vertical-align: bottom;">
+            {{ end }}
             {{ .Title }}
             {{ range .Params.languages }}
-            <img src="/icon/{{.}}.svg" width="24" height="24" alt="{{ . }} logo" title="{{ . | title }}" class="mx-1">
+            <img src="/icon/{{ . }}.svg" width="24" height="24" alt="{{ . }} logo" title="{{ . | title }}" class="mx-1">
             {{ end }}
         </h1>
         <h3 class="subtitle">
@@ -22,7 +25,9 @@
 </div>
 
 <br>
+<div class="container" style="min-height: calc(100vh - 34.5rem)">
 <div class="content mx-5 ">
     {{ .Content }}
+</div>
 </div>
 {{ end }}

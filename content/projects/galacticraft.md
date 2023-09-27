@@ -5,7 +5,7 @@ Icon: /image/galacticraft.png
 Description: |
   A Minecraft mod centered around space exploration using the [FabricMC](https://fabricmc.net/) modding framework.
 HeroImage: /image/hero/galacticraft.png
-heroImageType: is-dark
+heroType: is-dark
 repository: https://github.com/TeamGalacticraft/Galacticraft
 link: https://galacticraft.net/
 modrinth: galacticraft-legacy
