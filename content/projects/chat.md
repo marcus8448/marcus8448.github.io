@@ -28,7 +28,7 @@ until I realized the max block size was too small (and thereby moved to use AES 
 * Notification support
 * Support for both text and image messages
 * Messages are encrypted over the network
-  * After an initial handshake with RSA keys, a session AES key is generated and by the server
+  * After an initial handshake with RSA keys, a session AES key is generated and sent by the server
 * The server saves no user information
   * User accounts are based on RSA keys
   * Server just acts as a router
