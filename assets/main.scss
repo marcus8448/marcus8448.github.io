@@ -1,26 +1,51 @@
 @charset "utf-8";
 
-$navbar-breakpoint: 480px;
-$footer-padding: 2rem 1.5rem 4rem;
-//$info: darken(hsl(207, 61%,  53%), 10%);
+@use "bulma/sass/base";
+@use "bulma/sass/utilities/initial-variables" as iv;
+@use "bulma/sass/utilities/derived-variables" with (
+  $custom-colors: (
+    "light-yellow": (
+      hsl(42, 100%, 90%),
+      iv.$black,
+    ),
+    "light-blue": (
+      hsl(219, 61%, 90%),
+      iv.$black,
+    ),
+    "nav-blue": (
+      hsl(219, 61%, 53%),
+      iv.$white,
+    ),
+  )
+);
 
-@import 'bulma/sass/base/_all';
-@import "bulma/sass/utilities/_all";
+@use "bulma/sass/themes";
 
-@import 'bulma/sass/elements/box';
-@import 'bulma/sass/elements/container';
-@import 'bulma/sass/elements/content';
-@import 'bulma/sass/elements/icon';
-@import 'bulma/sass/elements/image';
-@import 'bulma/sass/elements/title';
-@import 'bulma/sass/components/media';
-@import 'bulma/sass/components/navbar';
-@import 'bulma/sass/grid/columns';
-@import 'bulma/sass/helpers/_all';
-@import 'bulma/sass/layout/footer';
-@import 'bulma/sass/layout/hero';
+@use "bulma/sass/helpers";
+@use "bulma/sass/utilities";
 
-@media (max-width: $tablet) {
+@use "bulma/sass/components/dropdown";
+@use "bulma/sass/components/panel";
+@use "bulma/sass/components/navbar" with (
+  $navbar-breakpoint: 480px,
+  //$navbar-background-color: hsl(180,100%,97%)
+);
+
+@use "bulma/sass/elements/box";
+@use "bulma/sass/elements/content";
+@use "bulma/sass/elements/title";
+@use "bulma/sass/elements/image";
+
+@use "bulma/sass/layout/container";
+@use "bulma/sass/layout/hero";
+@use "bulma/sass/layout/media";
+@use "bulma/sass/layout/footer" with (
+  $footer-padding: 2rem 1.5rem 4rem
+);
+
+@use "bulma/sass/grid/columns";
+
+@media (max-width: iv.$tablet) {
   .only-mobile {
     display: inherit;
   }
@@ -28,11 +53,37 @@ $footer-padding: 2rem 1.5rem 4rem;
     display: none !important;
   }
 }
-@media (min-width: $tablet) {
+
+@media (min-width: iv.$tablet) {
   .only-mobile {
     display: none !important;
   }
   .not-mobile {
     display: inherit;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .invert-dark {
+    filter: invert(1)
+  }
+}
+
+// based on: https://stackoverflow.com/a/52375669
+@function str-split($string) {
+  @return str-slice($string, 1, str-index($string, " ") - 1);
+};
+
+$hero-med-height: str-split("#{hero.$hero-body-padding-medium}");
+
+@media (max-width: iv.$tablet) {
+  .content-med-hero-size {
+    min-height: calc(100vh - #{navbar.$navbar-height} - #{$hero-med-height} - 10rem);
+  }
+}
+
+@media (min-width: iv.$tablet) {
+  .content-med-hero-size {
+    min-height: calc(100vh - #{navbar.$navbar-height} - #{$hero-med-height} - 23rem);
   }
 }

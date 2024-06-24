@@ -7,6 +7,7 @@
   "author": "marcus8448",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
-    "bulma": "^0.9.4"
+    "bulma": "^1.0.1",
+    "sass": "^1.77.6"
   }
 }

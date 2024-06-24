@@ -11,13 +11,9 @@
 </div>
 
 <br>
-<div class="content mx-5 ">
-    {{ .Content }}
-</div>
-
 {{ with .Site.GetPage "/projects" }}
 {{ range .RegularPages }}
-<div class="columns is-mobile">
+<div class="columns is-mobile mx-5">
     <div
         class="column is-8-fullhd is-offset-2-fullhd is-8-widescreen is-offset-2-widescreen is-10-desktop is-offset-1-desktop is-10-tablet is-offset-1-tablet is-full-mobile">
         <div class="box">
@@ -37,16 +33,17 @@
                         {{ .Params.Description | .RenderString }}
                     </div>
                 </div>
+                {{ $rust := "rust" }}
                 <div class="media-right not-mobile">
                     {{ range .Params.languages }}
                     <img src="/icon/{{ . }}.svg" width="24" height="24" alt="{{ . }} logo" title="{{ . | title }}"
-                         class="mx-1">
+                         class="mx-1 {{ if eq . $rust }} invert-dark {{ end }}">
                     {{ end }}
                 </div>
 
                 <div class="media-right">
                     {{ if .Params.repository }}
-                    <a href="{{ .Params.repository }}" class="mx-1">
+                    <a href="{{ .Params.repository }}" class="mx-1 invert-dark">
                         <img src="/icon/github.svg" width="24" height="24" alt="GitHub logo" title="GitHub Repository">
                     </a>
                     <br class="only-mobile">

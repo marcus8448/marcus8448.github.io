@@ -8,7 +8,7 @@ Description: |
 repository: https://github.com/marcus8448/MinecraftMods
 modrinth: gamemodeoverhaul
 curseforge: gamemodeoverhaul
-heroType: is-light
+heroType: has-background-light-soft
 languages:
   - java
   - gradle
@@ -16,7 +16,7 @@ languages:
 
 # About
 
-This was my first real mod for Minecraft, made in February 2019.
+This was my first proper Minecraft modification, originally released in February 2019.
 Created in about two weeks, the original goal of this mod was just restore the removed integer `/gamemode` arguments,
 but its scope steadily expanded to other commands and aliases.
 

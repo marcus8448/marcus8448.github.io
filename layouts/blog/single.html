@@ -4,11 +4,12 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="container pt-5 pb-5" style="min-height: calc(100vh - 11rem);">
-    <div class="content mx-5 ">
-        <h1>{{ .Title }}</h1>
-        {{ .Description }}
-        <hr>
+<div class="container pt-5 pb-5 mx-5" style="min-height: calc(100vh - 11rem);">
+    <h1 class="title">{{ .Title }}</h1>
+    <h2 class="subtitle">{{ .Date | time.Format ":date_medium" }}</h2>
+    {{ .Description }}
+    <hr>
+    <div class="content mx-5">
         {{ .Content }}
     </div>
 </div>

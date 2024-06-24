@@ -5,7 +5,7 @@ icon: /image/machinelib.png
 Description: |
   A library for Minecraft mods that simplifies the implementation of complex blocks that process resources.
 repository: https://github.com/TeamGalacticraft/MachineLib
-heroType: is-light
+heroType: has-background-light-soft
 languages:
   - java
   - gradle
@@ -26,7 +26,7 @@ I decided to try and make my own implementation using the newly standardized
 * Builder-style resource storage (inventory) creation
   * Slot resource filtering
   * Define slot locations in one place
-  * Simply define acceptable external block interactions and player interactions by setting a slot's type
+  * Define acceptable external block interactions and player interactions by setting a slot's type
 * Comes with a base `BlockEntity` implementation
   * Supports player-configurable resource I/O interactions with adjacent blocks
   * Minecraft redstone (de)activation

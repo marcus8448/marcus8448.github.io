@@ -1,6 +1,17 @@
 {{ define "main" }}
+<div class="hero is-medium is-background-light-blue-soft">
+    <div class="hero-body">
+        <h1 class="title">
+            {{ .Params.heroTitle }}
+        </h1>
+        <h3 class="subtitle">
+            {{ .Params.heroSubtitle }}
+        </h3>
+    </div>
+</div>
+
 <br>
-<div class="container" style="min-height: calc(100vh - 12.5rem)">
+<div class="container content-med-hero-size">
     <div class="content mx-5">
         {{ .Content }}
     </div>
