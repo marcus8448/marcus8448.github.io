@@ -1,7 +1,7 @@
 ---
 title: "Website"
 date: 2020-05-24T16:25:24-07:00
-icon: /favicon/favicon-192x192.png
+icon: https://avatars.githubusercontent.com/u/28928887?v=4
 Description: |
   My portfolio/website. Built with Hugo and Bulma and hosted on GitHub Pages.
 repository: https://github.com/marcus8448/marcus8448.github.io

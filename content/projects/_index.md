@@ -1,5 +1,5 @@
 ---
 title: "Projects"
-description: Things that I've created over the years
+description: Things I've created
 heroType: is-background-light-blue-soft
 ---
