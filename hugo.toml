@@ -1,14 +1,35 @@
 baseURL = 'http://marcus8448.github.io/'
-languageCode = 'en-us'
+languageCode = 'en-ca'
 title = 'marcus8448'
+copyright = '© 2022–2025 marcus8448'
+
+[params]
+  [params.author]
+    name = 'marcus8448'
+
+[build]
+  [build.buildStats]
+    enable = true
+
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
 
 [module]
-
-[[module.mounts]]
+  [[module.mounts]]
     source = 'assets'
     target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
 
-[[module.mounts]]
-    source = 'node_modules'
-    target = 'assets'
-    excludeFiles = '**.{md,json,css}'
+[outputs]
+  home = ['html']
+  section = ['html']
+  taxonomy = ['html']
+  term = ['html']

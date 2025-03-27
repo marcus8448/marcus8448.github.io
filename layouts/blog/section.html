@@ -1,50 +1,31 @@
-{{ define "main" }}
-<div class="hero is-medium {{ .Params.heroType }}">
-    <div class="hero-body">
-        <h1 class="title">
-            {{ .Title }}
-        </h1>
-        <h3 class="subtitle">
-            {{ .Description | .RenderString }}
-        </h3>
-    </div>
-</div>
-<br>
-{{ with .Site.GetPage "/blog" }}
-{{ range .RegularPages }}
-<div class="columns is-mobile">
-    <div
-        class="column is-8-fullhd is-offset-2-fullhd is-8-widescreen is-offset-2-widescreen is-10-desktop is-offset-1-desktop is-10-tablet is-offset-1-tablet is-10-mobile is-offset-1-mobile">
-        <div class="box">
-            <div class="media">
-                {{ if .Params.icon }}
-                <a class="media-left" href="{{ .RelPermalink }}">
-                    <p class="image is-128x128">
-                        <img src="{{ .Params.icon }}" alt="{{ .Title }}" style="border-radius: 12px">
-                    </p>
-                </a>
-                {{ end }}
-                <div class="media-content">
-                    <div class="content">
-                        <p class="title is-4 pb-1">
-                            <a href="{{ .RelPermalink }}" class="pr-2">{{ .Title }}</a>
-                        </p>
-                        {{ .Params.Description | .RenderString }}
-                    </div>
-                </div>
-                <div class="media-right not-mobile">
-                    {{ range .Params.languages }}
-                    <img src="/icon/{{ . }}.svg" width="24" height="24" alt="{{ . }} logo" title="{{ . | title }}"
-                         class="mx-1">
-                    {{ end }}
-                    {{ .Date | time.Format ":date_medium" }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{{ end }}
-{{ end }}
-<div class="content-med-hero-size"></div>
+{{ define "misc" }}
+  {{ partialCached "blog-links.html" . }}
+{{end}}
 
+{{ define "content-inner" }}
+  {{ .Content }}
+
+  <hr class="mt-8 mb-4">
+
+  <div class="flex flex-col">
+    {{ with .Site.GetPage "/blog" }}
+    {{ range .RegularPages }}
+
+    <a href="{{ .RelPermalink }}" class="no-underline hover:underline decoration-sky-950 dark:decoration-sky-100">
+      <h2 class="text-2xl text-sky-950 dark:text-sky-100 !m-0">
+        {{ .Title }}
+      </h2>
+    </a>
+    <h3 class="text-base text-gray-500 dark:text-gray-400 mt-0">
+      {{ .Date | time.Format ":date_medium" }}
+    </h3>
+
+    <a class="text-base no-underline text-gray-800 dark:text-gray-300">
+        {{ .Params.Description | .RenderString }}
+    </a>
+
+    <hr class="mt-4 mb-4">
+    {{ end }}
+    {{ end }}
+  </div>
 {{ end }}

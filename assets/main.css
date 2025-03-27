@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-prs: 38rem;
+}
+
+html {
+  visibility: visible !important;
+  height: 100%;
+}
+
+.prose {
+  @media (width < 88rem) {
+    max-width: 80ch !important;
+  }
+  @media (width >= 88rem) {
+    max-width: 100ch !important;
+  }
+  a[href] {
+    @apply text-sky-600;
+  }
+}
+
+hr {
+  /*noinspection CssUnresolvedCustomProperty*/
+  border-color: var(--tw-prose-hr);
+}
+
+body {
+  @apply
+  bg-gray-100 dark:bg-[#1e2d3c]
+  text-[#1e2d3c] dark:text-gray-300;
+  height: 100%;
+}
+
+.hero {
+  @apply w-full;
+  max-height: 60vh;
+}

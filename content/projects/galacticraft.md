@@ -1,5 +1,6 @@
 ---
 title: "Galacticraft"
+subtitle: An advanced space mod for Minecraft.
 date: 2019-03-18T11:12:29-07:00
 icon: /image/galacticraft.png
 Description: |

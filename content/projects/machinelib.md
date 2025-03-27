@@ -1,5 +1,6 @@
 ---
 title: "MachineLib"
+subtitle: Library mod for Galacticraft
 date: 2022-03-05T09:46:52-08:00
 icon: /image/machinelib.png
 Description: |

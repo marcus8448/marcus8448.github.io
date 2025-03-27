@@ -1,16 +1,15 @@
+{{ define "misc" }}
+  {{ partialCached "blog-links.html" . }}
+{{end}}
+
 {{ define "title" }}
-<title>Blog | {{.Title}}</title>
-<meta property="og:title" content="Blog | {{ .Title }}">
+<title>{{.Title}} | Blog</title>
+<meta property="og:title" content="{{ .Title }} | Blog">
 {{ end }}
 
-{{ define "main" }}
-<div class="container pt-5 pb-5 mx-5" style="min-height: calc(100vh - 11rem);">
-    <h1 class="title">{{ .Title }}</h1>
-    <h2 class="subtitle">{{ .Date | time.Format ":date_medium" }}</h2>
-    {{ .Description }}
-    <hr>
-    <div class="content mx-5">
-        {{ .Content }}
-    </div>
-</div>
+{{ define "content-inner" }}
+  <h1 class="mb-0">{{ .Title }}</h1>
+  <h5>{{ .Date }}</h5>
+
+  {{ .Content }}
 {{ end }}

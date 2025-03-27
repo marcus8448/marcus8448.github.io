@@ -1,0 +1,15 @@
+{{ define "pre" }}
+  {{ if .Params.heroTitle }}
+  {{$cls := .Params.heroClasses | default "p-8" }}
+  <div class="hero {{ $cls  }}" style="background-image: url('{{ .Params.heroImage }}');">
+    <div class="top-0 left-0">
+      <h1 class="text-3xl font-bold pb-1">
+        {{ .Params.heroTitle }}
+      </h1>
+      <h3 class="text-1xl">
+        {{ .Params.heroSubtitle }}
+      </h3>
+    </div>
+  </div>
+  {{ end }}
+{{ end }}

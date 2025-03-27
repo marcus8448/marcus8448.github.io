@@ -6,7 +6,9 @@
   "main": "content/_index.md",
   "author": "marcus8448",
   "license": "CC-BY-NC-SA-4.0",
-  "dependencies": {
-    "bulma": "^1.0.1"
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.14",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "^4.0.14"
   }
 }

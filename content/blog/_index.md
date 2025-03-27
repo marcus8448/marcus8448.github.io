@@ -1,7 +1,9 @@
 ---
-title: "Blog"
-description: Coming soon&trade;
-heroType: is-background-light-blue-soft
-date: 2023-09-22T13:51:23-07:00
+title: Blog
+description: My blog
+date: "2025-01-01T00:00:00-00:00"
+outputs: ['html','rss']
 ---
-    
+# Blog 
+
+Coming soon&trade;

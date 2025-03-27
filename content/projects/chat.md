@@ -1,5 +1,6 @@
 ---
-title: "Chat"
+title: Chat
+subtitle: An encrypted, ephemeral instant messaging app.
 date: 2023-06-12T00:00:00-00:00
 icon: /image/chat.png
 Description: |
