@@ -1,15 +1,15 @@
 {{- with resources.Get "main.css" -}}
   {{- $opts := dict
   "inlineImports" true
-  "optimize" (not hugo.IsDevelopment)
+  "minify" hugo.IsProduction
   -}}
   {{- with . | css.TailwindCSS $opts -}}
-    {{- if hugo.IsDevelopment -}}
-      <link rel="stylesheet" href="{{ .RelPermalink }}" />
-    {{- else -}}
+    {{- if hugo.IsProduction -}}
       {{- with . | minify | fingerprint -}}
       <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
       {{- end -}}
+    {{- else -}}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" />
     {{- end -}}
   {{- end -}}
 {{- end -}}
