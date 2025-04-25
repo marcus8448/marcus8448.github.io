@@ -12,7 +12,7 @@ languages:
   - gradle
 ---
 
-# About
+## About
 
 This was a project that I made in approximately 2 weeks to gain more experience using JavaFX.
 This time I avoided FXML and defined the GUI in pure Java.
@@ -23,7 +23,7 @@ I found it interesting to compare the strengths and weaknesses of different cryp
 Originally, everything was based on RSA keys,
 until I realized the max block size could not support large messages (and thereby moved to use AES session keys).
 
-# Features
+## Features
 
 * Channel support
 * System tray notification support
@@ -37,7 +37,7 @@ until I realized the max block size could not support large messages (and thereb
   * Upon closing the client, all history is forgotten
 * User account data stored on the client is encrypted with a password using PBKDF2
 
-# Security
+## Security
 
 ### Initial Handshake
 
@@ -63,4 +63,5 @@ However, this also means that if the user forgets their password, they will lose
 
 ### Disclaimer
 
-I cannot guarantee the security or privacy of messages sent using this application/protocol. Use at your own risk!
+While I hope the application is secure, I cannot guarantee the security of messages sent.
+Use at your own risk!

@@ -1,11 +1,5 @@
-{{ define "content" }}
-<div class="flex flex-row flex-grow">
-  <div class="grow max-prs:hidden"></div>
-  <main class="min-prs:rounded-md block grow shrink-0 w-full min-prs:my-8 p-4 prose dark:prose-invert prose-h1:-mb-0 content-center">
-    {{ block "content-inner" . }}
-      {{ .Content }}
-    {{ end }}
-  </main>
-  <div class="grow-1 max-prs:hidden"></div>
-</div>
+{{ define "content-inner" }}
+<main class="p-5 content-center">
+  {{ .Content }}
+</main>
 {{ end }}

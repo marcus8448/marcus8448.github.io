@@ -1,5 +1,5 @@
 ---
-title: "MachineLib"
+title: "Machine<wbr />Lib"
 subtitle: Library mod for Galacticraft
 date: 2022-03-05T09:46:52-08:00
 icon: /image/machinelib.png
@@ -14,7 +14,7 @@ languages:
 
 This library/mod aims to reduce the amount of boilerplate code required to implement blocks with inventories and menus.
 
-# About
+## About
 
 Before MachineLib existed, Galacticraft used [UniversalComponents](https://github.com/CottonMC/UniversalComponents)
 to handle inventories, then [LibBlockAttributes](https://github.com/AlexIIL/LibBlockAttributes).
@@ -22,7 +22,7 @@ When we were stuck waiting for these libraries to update,
 I decided to try and make my own implementation using the newly standardized
 [transfer api](https://github.com/FabricMC/fabric/pull/1553), and created MachineLib.
 
-# Features
+## Features
 
 * Builder-style resource storage (inventory) creation
   * Slot resource filtering

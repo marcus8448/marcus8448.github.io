@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "description": "Website",
   "homepage": "https://marcus8448.github.io/",
-  "main": "content/_index.md",
+  "main": "content/_index.html",
   "author": "marcus8448",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
     "@tailwindcss/cli": "^4.0.14",
-    "@tailwindcss/typography": "^0.5.16",
     "tailwindcss": "^4.0.14"
   }
 }

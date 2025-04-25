@@ -1,10 +1,11 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 @source "hugo_stats.json";
 
 @theme {
-  --breakpoint-xs: 30rem;
-  --breakpoint-prs: 38rem;
+  --breakpoint-xs: 24rem;
+  --breakpoint-prs: 82ch;
+
+  --color-base-dark: oklch(0.25 0.019 254.5);
 }
 
 html {
@@ -12,31 +13,124 @@ html {
   height: 100%;
 }
 
-.prose {
-  @media (width < 88rem) {
-    max-width: 80ch !important;
-  }
-  @media (width >= 88rem) {
-    max-width: 100ch !important;
-  }
-  a[href] {
-    @apply text-sky-600;
-  }
-}
-
-hr {
-  /*noinspection CssUnresolvedCustomProperty*/
-  border-color: var(--tw-prose-hr);
-}
-
 body {
-  @apply
-  bg-gray-100 dark:bg-[#1e2d3c]
-  text-[#1e2d3c] dark:text-gray-300;
-  height: 100%;
+  @apply h-full;
+  @apply bg-white text-slate-800;
+  @apply dark:bg-base-dark dark:text-white;
 }
 
-.hero {
-  @apply w-full;
-  max-height: 60vh;
+* {
+  @apply border-slate-400 dark:border-slate-500;
 }
+
+h1 {
+  @apply font-extrabold text-4xl mb-2;
+}
+
+h2 {
+  @apply font-bold text-2xl;
+}
+
+h3 {
+  @apply font-bold text-xl;
+}
+
+h4 {
+  @apply font-bold text-lg;
+}
+
+h5 {
+  @apply font-semibold text-lg;
+}
+
+h6 {
+  @apply text-lg;
+}
+
+.listing {
+  @apply px-4 py-6;
+  @apply border-b overflow-hidden;
+
+  > h2:hover, > * h2:hover {
+    @apply text-slate-600 dark:text-gray-200;
+  }
+}
+
+.writing {
+  > h1 {
+    @apply mb-4;
+  }
+
+  > h2 {
+    @apply text-3xl mt-4 mb-3;
+  }
+
+  > h3 {
+    @apply mt-4 -mb-2;
+  }
+
+  > p {
+    @apply my-3 box-border text-base/7;
+    @apply dark:text-gray-100;
+  }
+
+  > ul, > * ul {
+    @apply list-disc pl-4;
+  }
+
+  > ul li {
+    @apply py-0.5;
+  }
+
+  > code, > * code:not(.highlight *) { /*I'm actually shocked at how nice this looks*/
+    @apply bg-gray-200 dark:bg-slate-700 rounded-sm p-0.5;
+  }
+
+  > * a[href] {
+    @apply text-sky-600 dark:text-sky-500;
+  }
+  > * a[href]:hover {
+    @apply underline;
+    @apply text-sky-500 dark:text-sky-400;
+    @apply decoration-sky-500 dark:decoration-sky-400;
+  }
+}
+
+.highlight {
+  @apply py-6;
+  > pre {
+    @apply rounded-md;
+    @apply py-1;
+
+    > code > span {
+      @apply pl-1;
+    }
+  }
+}
+
+.subtitle {
+  @apply -mt-2;
+  @apply text-gray-600 dark:text-gray-300;
+}
+
+.meta {
+  @apply text-gray-500 dark:text-gray-400;
+  @apply contrast-more:text-gray-600 dark:contrast-more:text-gray-400;
+}
+
+a.link[href] {
+  @apply text-sky-600 dark:text-sky-500;
+}
+
+.content-writing {
+  @apply block w-full min-prs:mt-8 p-4;
+
+  max-width: 80ch;
+}
+
+.content-media {
+  @apply block w-full min-prs:mt-8 p-4;
+
+  max-width: max(80ch, 50%);
+}
+

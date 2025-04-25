@@ -1,0 +1,41 @@
+<div class="flex flex-row justify-between fixed w-full z-10 h-12 pl-3 pr-3 gap-4 bg-sky-700 dark:bg-sky-900 text-gray-100">
+  <div class="flex flex-row items-center shrink-0 gap-4">
+    <a href="/"><img src="https://avatars.githubusercontent.com/u/28928887?size=192" alt="marcus8448" class="rounded-xl size-8"></a>
+    <p class="text-base max-[32rem]:hidden max-xs:inline">marcus8448</p>
+  </div>
+  <div class="flex flex-row items-center justify-between gap-4 w-full max-xs:hidden">
+    <div class="flex flex-row items-center gap-2 h-full">
+      <div class="border-l h-8 mr-1 max-xs:hidden"></div>
+      <a class="text-sm hover:text-gray-300 px-1" href="/">Home</a>
+      <a class="text-sm hover:text-gray-300 px-1" href="/blog">Blog</a>
+      <a class="text-sm hover:text-gray-300 px-1" href="/projects">Projects</a>
+      <a class="text-sm hover:text-gray-300 px-1" href="/contact">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-4 max-xs:hidden">
+      {{ block "nav-links" . }}
+      {{ end }}
+      <a aria-label="GitHub Account" href="https://github.com/marcus8448">
+        <img src="/icon/github.svg" alt="GitHub Logo" class="invert size-6">
+      </a>
+    </div>
+  </div>
+  <div class="hidden max-xs:flex flex-row items-center shrink-0 h-full">
+    <a id="nav-burger" role="button" class="max-xs:flex flex-col gap-1.5" aria-label="menu" aria-expanded="false">
+      <span class="border-t w-5" aria-hidden="true"> </span>
+      <span class="border-t w-5" aria-hidden="true"> </span>
+      <span class="border-t w-5" aria-hidden="true"> </span>
+    </a>
+  </div>
+</div>
+
+<div class="h-12"><!--HACK: spacing for navbar--></div>
+
+<div id="nav-dropdown" class="fixed z-10 hidden min-xs:!hidden flex-col w-full bg-sky-600 dark:bg-sky-800 text-gray-100">
+  <div class="flex flex-col items-start justify-between w-full">
+    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/">Home</a>
+    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/blog">Blog</a>
+    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/projects">Projects</a>
+    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/contact">Contact</a>
+  </div>
+</div>

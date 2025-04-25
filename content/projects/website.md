@@ -14,7 +14,7 @@ languages:
   - html5
 ---
 
-# About
+## About
 
 My original website (2020) was generated using a single handwritten template with Jekyll.
 It had a basic navbar and not much else.
@@ -30,7 +30,6 @@ This time I tried to focus on making the website responsive, rather than solely 
 
 The current website (as of 2025) now uses TailwindCSS rather than Bulma.
 Due to the extensive use of CSS variables in Bulma 1.0 (released 2024), the size of the project grew to over 100KB, minimized.
-
 
 The majority of the icons used on the site are from [Simple Icons](https://simpleicons.org/) 
 and [Font Awesome](https://github.com/FortAwesome/Font-Awesome).

@@ -1,5 +1,6 @@
 ---
 title: Lorem Ipsum
+subtitle: To be, or not to be, that is the question
 description: Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis facilisi dignissim gravida habitant elit, nulla iaculis primis.
 date: 2025-01-01T00:00:00-00:00
 ---
@@ -13,4 +14,4 @@ Suspendisse curae rhoncus mattis, quis penatibus egestas. Habitant quam nunc veh
 Ligula ex venenatis lacinia nisi; fames dui finibus. Curabitur felis taciti per semper neque ex cras sed et. Curae erat elit ex senectus rutrum neque placerat ac taciti. Faucibus lacinia tellus nec viverra id aliquam curabitur dui. Placerat pellentesque nullam dictum quam sapien cras. Velit porta elementum at pharetra in lobortis. Libero lacus ultrices ridiculus inceptos integer ipsum nostra. Dis luctus mauris adipiscing; tempus tempor sagittis faucibus adipiscing.
 
 Erat enim ipsum congue rutrum fusce habitant lacus gravida. Sapien eu ipsum taciti vel elit nisl vestibulum. Fringilla vulputate pretium at sed eu semper ligula metus. Cursus dignissim imperdiet est eros cras proin. Himenaeos odio lorem ut penatibus varius sapien etiam condimentum. Fusce fermentum magnis mi venenatis non dapibus. Volutpat maximus ac lectus duis penatibus curabitur. Tortor laoreet nullam mus cursus mattis integer.
-    
+

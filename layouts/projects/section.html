@@ -1,31 +1,29 @@
 {{ define "content-inner" }}
-{{ .Content }}
+<main class="content-media">
+  {{ .Content }}
 
-<hr class="mt-8 mb-2 -ml-2 px-4">
-<div class="flex flex-col gap-4 not-prose">
-  {{ with .Site.GetPage "/projects" }}
-  {{ range .RegularPages }}
-  <div class="flex-col">
-    <div class="block">
-      {{ if .Params.icon }}
-      <a href="{{ .RelPermalink }}" class="w-24 aspect-square grow-0 inline-block float-left mr-4">
-        <img src="{{ .Params.icon }}" class="rounded-lg" alt="{{ .Title }}">
-      </a>
-      {{ end }}
-
-      <div class="flex flex-row max-sm:flex-col gap-1 float-right">
-        {{ $rust := "rust" }} <!--to keep formatting nice in HTML class string-->
-        {{ range .Params.languages }}
-        <img src="/icon/{{ . }}.svg" alt="{{ . | title }} logo" title="{{ . | title }}" class="w-6 aspect-square float-right {{ if or (eq . $rust) }} dark:invert {{ end }}">
+  <div class="flex flex-col border-t mt-8">
+    {{ with .Site.GetPage "/projects" }}
+    {{ range .RegularPages }}
+      <div class="block listing">
+        {{ if .Params.icon }}
+        <a href="{{ .RelPermalink }}" class="w-24 aspect-square grow-0 inline-block float-left mr-4">
+          <img src="{{ .Params.icon }}" class="rounded-lg" alt="{{ .Title | plainify | title }}">
+        </a>
         {{ end }}
-      </div>
 
-      <a href="{{ .RelPermalink }}" class="no-underline hover:underline decoration-sky-950 dark:decoration-sky-100"><h1 class="text-2xl font-bold text-sky-950 dark:text-sky-100">{{ .Title }}</h1></a>
-      <p>{{ .Params.Description | .RenderString }}</p>
-    </div>
+        <div class="flex flex-row max-sm:flex-col gap-1.5 float-right">
+          {{ $rust := "rust" }} <!--to keep formatting nice in HTML class string-->
+          {{ range .Params.languages }}
+          <img src="/icon/{{ . }}.svg" alt="{{ . | title }} logo" title="{{ . | title }}" class="w-6 aspect-square float-right {{ if or (eq . $rust) }} dark:invert {{ end }}">
+          {{ end }}
+        </div>
+
+        <h2><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
+        <p class="text-base text-gray-800 dark:text-gray-100 text-pretty">{{ .Params.Description | .RenderString }}</p>
+      </div>
+    {{ end }}
+    {{ end }}
   </div>
-  <hr class="my-2 -ml-2 px-4">
-  {{ end }}
-  {{ end }}
-</div>
+</main>
 {{ end }}

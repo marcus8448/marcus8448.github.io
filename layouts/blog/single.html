@@ -3,13 +3,22 @@
 {{end}}
 
 {{ define "title" }}
-<title>{{.Title}} | Blog</title>
+<title>{{ .Title }} | Blog</title>
 <meta property="og:title" content="{{ .Title }} | Blog">
 {{ end }}
 
 {{ define "content-inner" }}
-  <h1 class="mb-0">{{ .Title }}</h1>
-  <h5>{{ .Date }}</h5>
+<main class="content-writing">
+  <div class="mb-4 min-prs:mb-8">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}
+    <p class="text-lg subtitle -mb-0.5">{{ . }}</p>
+    {{ end }}
+    <p class="text-base meta">{{ .Date | time.Format ":date_long" }} {{ .Date | time.Format ":time_short" }}</p>
+  </div>
 
-  {{ .Content }}
+  <div class="writing">
+    {{ .Content }}
+  </div>
+</main>
 {{ end }}

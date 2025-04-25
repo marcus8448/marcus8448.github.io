@@ -1,4 +1,4 @@
-baseURL = 'http://marcus8448.github.io/'
+baseURL = 'https://marcus8448.github.io/'
 languageCode = 'en-ca'
 title = 'marcus8448'
 copyright = '© 2022–2025 marcus8448'
@@ -18,6 +18,10 @@ copyright = '© 2022–2025 marcus8448'
   [[build.cachebusters]]
     source = '(postcss|tailwind)\.config\.js'
     target = 'css'
+
+[markuo]
+  [markup.highlight]
+    style = "catppuccin-frappe"
 
 [module]
   [[module.mounts]]

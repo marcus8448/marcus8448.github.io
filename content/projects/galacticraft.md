@@ -16,7 +16,7 @@ languages:
   - gradle
 ---
 
-# About
+## About
 
 I started to contribute to Galacticraft (4) through issue/bug reports in 2017 and pull requests in 2018.
 In 2019, I was invited to work on Galacticraft 5 (called Galacticraft: Rewoven at the time) and have worked on it since then.
@@ -32,7 +32,7 @@ As a member of the international team creating Galacticraft 5, I have:
 * Made rockets, planets and galaxies extensible and data driven
 * Kept the project up to date with upstream api changes
 
-# Features
+## Features
 
 * Explore the solar system in your own spaceship!
 * Support for custom rocket parts and planets via datapacks

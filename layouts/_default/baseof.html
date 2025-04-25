@@ -15,7 +15,7 @@
 
   <meta property="og:description" content="{{ .Description }}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="/">
+  <meta property="og:url" content="{{ .RelPermalink }}">
   <meta name="color-scheme" content="light dark">
 
   {{ block "icons" . }}
@@ -28,7 +28,7 @@
     {{- partialCached "css.html" . -}}
   {{- end -}}
 
-  {{ with resources.Get "navbar.js" | js.Build (dict "minify" "true") }}
+  {{ with resources.Get "main.js" | js.Build (dict "minify" "true") }}
     <script src="{{ .RelPermalink }}" defer></script>
   {{ end }}
 
@@ -40,49 +40,7 @@
 {{ block "misc" . }}
 {{ end }}
 
-{{ block "nav" . }}
-<div class="flex flex-row justify-between fixed w-full z-10 h-12 pl-3 pr-3 gap-4 bg-sky-700 dark:bg-sky-900 text-gray-100">
-  <div class="flex flex-row items-center shrink-0 gap-4">
-    <a href="/"><img src="https://avatars.githubusercontent.com/u/28928887?size=192" alt="marcus8448" class="rounded-xl size-8"></a>
-    <a href="/" class="text-base max-sm:hidden" tabindex="-1">marcus8448</a>
-  </div>
-  <div class="flex flex-row items-center justify-between gap-4 w-full max-xs:hidden">
-    <div class="flex flex-row items-center gap-2">
-      <div class="border-l h-8 mr-1 max-xs:hidden"></div>
-      <a class="text-sm hover:text-gray-300 px-1" href="/">Home</a>
-      <a class="text-sm hover:text-gray-300 px-1" href="/blog">Blog</a>
-      <a class="text-sm hover:text-gray-300 px-1" href="/projects">Projects</a>
-      <a class="text-sm hover:text-gray-300 px-1" href="/contact">Contact</a>
-    </div>
-
-    <div class="flex items-center gap-4 max-xs:hidden">
-      {{ block "nav-links" . }}
-      {{ end }}
-      <a aria-label="GitHub Account" href="https://github.com/marcus8448">
-        <img src="/icon/github.svg" alt="GitHub Logo" class="invert size-6">
-      </a>
-    </div>
-  </div>
-  <div class="hidden max-xs:flex flex-row items-center shrink-0 h-full">
-    <a id="nav-burger" role="button" class="max-xs:flex flex-col gap-1.5" aria-label="menu" aria-expanded="false">
-      <span class="border-t w-5" aria-hidden="true"> </span>
-      <span class="border-t w-5" aria-hidden="true"> </span>
-      <span class="border-t w-5" aria-hidden="true"> </span>
-    </a>
-  </div>
-</div>
-
-<div class="pt-12"><!--HACK: spacing for navbar--></div>
-
-<div id="nav-dropdown" class="fixed z-10 hidden min-xs:!hidden flex-col w-full bg-sky-600 dark:bg-sky-800 text-gray-100">
-  <div class="flex flex-col items-start justify-between w-full">
-      <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/">Home</a>
-      <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/blog">Blog</a>
-      <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/projects">Projects</a>
-      <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/contact">Contact</a>
-  </div>
-</div>
-{{ end }}
+{{- partialCached "nav.html" . -}}
 
 <div class="flex flex-col" style="min-height: calc(100% - var(--spacing) * 12);">
   {{ block "main" . }}
@@ -90,25 +48,22 @@
     {{ end }}
 
     {{ block "content" . }}
-      <div class="flex flex-row flex-grow">
-        <div class="grow max-prs:hidden"></div>
-        <main class="min-prs:rounded-md block grow shrink-0 w-full min-prs:my-8 p-4 prose dark:prose-invert prose-h1:-mb-0">
-          {{ block "content-inner" . }}
+      <div class="flex flex-row flex-grow justify-center">
+        {{ block "content-inner" . }}
+          <main class="content-writing writing">
+            <h1>{{ .Title }}</h1>
             {{ .Content }}
-          {{ end }}
-        </main>
-        <div class="grow max-prs:hidden"></div>
+          </main>
+        {{ end }}
       </div>
     {{ end }}
   {{ end }}
 
   {{ block "footer" . }}
   <footer class="shrink-0">
-    <div class="text-center align-middle text-gray-500 dark:text-gray-400 m-8">
-      <p>
-        Copyright &#169; 2022–2025 marcus8448<br>
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="text-sky-600">CC&nbsp;BY&nbsp;NC&nbsp;SA&nbsp;4.0</a>
-      </p>
+    <div class="text-center align-middle m-8">
+      <p class="text-base meta">Copyright &#169; 2022–2025 marcus8448</p>
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">CC&nbsp;BY&nbsp;NC&nbsp;SA&nbsp;4.0</a>
     </div>
   </footer>
   {{ end }}
