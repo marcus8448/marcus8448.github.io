@@ -5,19 +5,20 @@
 
 {{ define "content-inner" }}
 <main class="content-writing">
-  <div class="hero mb-10">
-    <div class="block overflow-hidden">
+  <div class="flex mb-10 gap-4">
       {{ if .Params.icon }}
-      <img src="{{ .Params.icon }}" class="inline-block aspect-square w-20 rounded-lg float-left mr-2 s" alt="{{ .Title | plainify }}">
+        <img src="{{ .Params.icon }}" class="inline-block aspect-square w-20 rounded-lg s" alt="{{ .Title | plainify }}">
       {{ end }}
-      <h1 class="text-5xl font-bold">
-        {{ .Title | safeHTML }}
-      </h1>
 
-      <p class="text-lg font-semibold">
-        {{ .Params.Subtitle }}
-      </p>
-    </div>
+      <div class="flex flex-col justify-center">
+        <h1 class="text-5xl font-bold !mb-1">
+          {{ .Title | safeHTML }}
+        </h1>
+
+        <p class="text-lg font-normal ml-1">
+          {{ .Params.Subtitle }}
+        </p>
+      </div>
   </div>
 
   <div class="writing text-pretty">
@@ -25,6 +26,12 @@
   </div>
 
   <div class="flex flex-row mt-8 gap-4 justify-center">
+    {{ if .Params.repository }}
+    <a href="{{ .Params.repository }}" class="block border-1 rounded-xl p-2 !border-gray-700">
+      <img src="/icon/github.svg" alt="Link" title="Git Repository" class="aspect-square w-8 float-left mr-2 dark:invert">
+      <span class="inline-block pt-1">Repository</span>
+    </a>
+    {{ end }}
     {{ if .Params.modrinth }}
     <a href="https://modrinth.com/mod/{{ .Params.modrinth }}" class="block border-1 rounded-xl p-2 !border-gray-700">
       <img src="/icon/modrinth.svg" alt="Modrinth logo" title="Modrinth Project" class="aspect-square w-8 float-left mr-2">
