@@ -27,13 +27,13 @@
 
   <div class="flex flex-row mt-8 gap-4 justify-center">
     {{ if .Params.repository }}
-    <a href="{{ .Params.repository }}" class="block border-1 rounded-xl p-2 !border-gray-700">
+    <a href="{{ .Params.repository }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
       <img src="/icon/github.svg" alt="Link" title="Git Repository" class="aspect-square w-8 float-left mr-2 dark:invert">
       <span class="inline-block pt-1">Repository</span>
     </a>
     {{ end }}
     {{ if .Params.modrinth }}
-    <a href="https://modrinth.com/mod/{{ .Params.modrinth }}" class="block border-1 rounded-xl p-2 !border-gray-700">
+    <a href="https://modrinth.com/mod/{{ .Params.modrinth }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
       <img src="/icon/modrinth.svg" alt="Modrinth logo" title="Modrinth Project" class="aspect-square w-8 float-left mr-2">
       <span class="inline-block pt-1">Modrinth</span>
       <a href="https://modrinth.com/mod/{{ .Params.modrinth }}">
@@ -41,19 +41,19 @@
     </a>
     {{ end }}
     {{ if .Params.curseforge }}
-    <a href="https://www.curseforge.com/minecraft/mc-mods/{{ .Params.curseforge }}" class="block border-1 rounded-xl p-2 !border-gray-700">
+    <a href="https://www.curseforge.com/minecraft/mc-mods/{{ .Params.curseforge }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
       <img src="/icon/curseforge.svg" alt="CurseForge logo" title="CurseForge Project" class="aspect-square w-8 float-left mr-2">
       <span class="inline-block pt-1">CurseForge</span>
     </a>
     {{ end }}
     {{ if .Params.docs }}
-    <a href="{{ .Params.docs }}" class="block border-1 rounded-xl p-2 !border-gray-700">
+    <a href="{{ .Params.docs }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
       <img src="/icon/book.svg" alt="Book" title="Documentation" class="aspect-square w-8 float-left mr-2">
       <span class="inline-block pt-1">Documentation</span>
     </a>
     {{ end }}
     {{ if .Params.link }}
-    <a href="{{ .Params.link }}" class="block border-1 rounded-xl p-2 !border-gray-700">
+    <a href="{{ .Params.link }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
       <img src="/icon/external-link.svg" alt="Link" title="Project Homepage" class="aspect-square w-8 float-left mr-2">
       <span class="inline-block pt-1">Homepage</span>
     </a>
