@@ -1,7 +1,7 @@
 baseURL = 'https://marcus8448.github.io/'
 languageCode = 'en-ca'
 title = 'marcus8448'
-copyright = '© 2022–2025 marcus8448'
+copyright = 'Copyright © 2022–2025 marcus8448'
 
 [params]
   [params.author]

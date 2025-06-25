@@ -1,0 +1,6 @@
+{{ if .link }}
+<a href="{{ .link }}" class="inline-block border-1 rounded-xl py-1 px-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
+  <img src="{{ .icon }}" alt="{{ .alt }}" class="aspect-square w-4 h-4 float-left mr-2 mt-1 {{ if .invert }} dark:invert {{ end }}">
+  <span class="inline-block text-sm">{{ .text }}</span>
+</a>
+{{ end }}

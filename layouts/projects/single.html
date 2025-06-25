@@ -4,7 +4,7 @@
 {{ end }}
 
 {{ define "content-inner" }}
-<main class="content-writing">
+<main>
   <div class="flex mb-10 gap-4">
       {{ if .Params.icon }}
         <img src="{{ .Params.icon }}" class="inline-block aspect-square w-20 rounded-lg s" alt="{{ .Title | plainify }}">
@@ -25,39 +25,42 @@
     {{ .Content }}
   </div>
 
-  <div class="flex flex-row mt-8 gap-4 justify-center">
-    {{ if .Params.repository }}
-    <a href="{{ .Params.repository }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
-      <img src="/icon/github.svg" alt="Link" title="Git Repository" class="aspect-square w-8 float-left mr-2 dark:invert">
-      <span class="inline-block pt-1">Repository</span>
-    </a>
-    {{ end }}
+  <div class="text-center mt-16">
+    {{ partial "project-button.html" (dict
+    "link" .Params.link
+    "icon" "/icon/external-link.svg"
+    "text" "Project Page"
+    "alt" "External Link Icon"
+    )}}
     {{ if .Params.modrinth }}
-    <a href="https://modrinth.com/mod/{{ .Params.modrinth }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
-      <img src="/icon/modrinth.svg" alt="Modrinth logo" title="Modrinth Project" class="aspect-square w-8 float-left mr-2">
-      <span class="inline-block pt-1">Modrinth</span>
-      <a href="https://modrinth.com/mod/{{ .Params.modrinth }}">
-      </a>
-    </a>
+    {{ partial "project-button.html" (dict
+    "link" (printf "%s%s" "https://modrinth.com/mod/" .Params.modrinth)
+    "icon" "/icon/modrinth.svg"
+    "text" "Modrinth"
+    "alt" "Modrinth Logo"
+    )}}
     {{ end }}
     {{ if .Params.curseforge }}
-    <a href="https://www.curseforge.com/minecraft/mc-mods/{{ .Params.curseforge }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
-      <img src="/icon/curseforge.svg" alt="CurseForge logo" title="CurseForge Project" class="aspect-square w-8 float-left mr-2">
-      <span class="inline-block pt-1">CurseForge</span>
-    </a>
+    {{ partial "project-button.html" (dict
+    "link" (printf "%s%s" "https://www.curseforge.com/minecraft/mc-mods/" .Params.curseforge)
+    "icon" "/icon/curseforge.svg"
+    "text" "CurseForge"
+    "alt" "CurseForge Logo"
+    )}}
     {{ end }}
-    {{ if .Params.docs }}
-    <a href="{{ .Params.docs }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
-      <img src="/icon/book.svg" alt="Book" title="Documentation" class="aspect-square w-8 float-left mr-2">
-      <span class="inline-block pt-1">Documentation</span>
-    </a>
-    {{ end }}
-    {{ if .Params.link }}
-    <a href="{{ .Params.link }}" class="block border-1 rounded-xl p-2 !border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800">
-      <img src="/icon/external-link.svg" alt="Link" title="Project Homepage" class="aspect-square w-8 float-left mr-2">
-      <span class="inline-block pt-1">Homepage</span>
-    </a>
-    {{ end }}
+    {{ partial "project-button.html" (dict
+    "link" .Params.docs
+    "icon" "/icon/book.svg"
+    "text" "Documentation"
+    "alt" "Book Icon"
+    "invert" "true"
+    )}}
+    {{ partial "project-button.html" (dict
+    "link" .Params.repository
+    "icon" "/icon/git.svg"
+    "text" "Repository"
+    "alt" "Git Icon"
+    )}}
   </div>
 </main>
 {{ end }}

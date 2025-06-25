@@ -2,6 +2,7 @@
 title: Gamemode<wbr />Overhaul
 subtitle: Minecraft mod with over 500,000 downloads
 date: 2019-02-16T00:00:00-00:00
+timeframe: 2019-present
 icon: /image/gamemodeoverhaul.png
 description: |
   A mod for Minecraft that restores command options removed in the 1.13 update.
@@ -9,9 +10,9 @@ description: |
 repository: https://github.com/marcus8448/MinecraftMods
 modrinth: gamemodeoverhaul
 curseforge: gamemodeoverhaul
-languages:
-  - java
-  - gradle
+tools:
+  - Java
+  - Gradle
 ---
 
 ## About

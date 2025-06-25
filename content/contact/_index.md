@@ -1,7 +1,8 @@
 ---
 title: Contact
 description: My contact information
-date: 2025-01-01T00:00:00-00:00
+publishDate: 2025-01-01T00:00:00-00:00
+date: 2025-06-24T00:00:00-00:00
 ---
 
 ## Email

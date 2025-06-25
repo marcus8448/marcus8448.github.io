@@ -7,7 +7,7 @@
   "author": "marcus8448",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.14",
-    "tailwindcss": "^4.0.14"
+    "@tailwindcss/cli": "^4.1",
+    "tailwindcss": "^4.1"
   }
 }

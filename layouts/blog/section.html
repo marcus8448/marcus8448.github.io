@@ -1,21 +1,21 @@
 {{ define "content-inner" }}
-<main class="content-writing">
+<main>
   {{ .Content }}
 
   <div class="flex flex-col border-t mt-8">
     {{ with .Site.GetPage "/blog" }}
     {{ range .RegularPages }}
-      <div class="block listing">
+      <article class="block listing">
         <h2 class="-mt-2">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
-        <p class="text-sm meta pb-2">
+        <p class="text-sm text-meta pb-2">
           {{ .Date | time.Format ":date_medium" }}
         </p>
         <p class="text-base text-gray-800 dark:text-gray-100 text-pretty">
           {{ .Params.Description | .RenderString }}
         </p>
-      </div>
+      </article>
     {{ end }}
     {{ end }}
   </div>

@@ -3,6 +3,7 @@ title: Lorem Ipsum
 subtitle: To be, or not to be, that is the question
 description: Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis facilisi dignissim gravida habitant elit, nulla iaculis primis.
 date: 2025-01-01T00:00:00-00:00
+lastmod: 2025-06-01T00:00:00-00:00
 ---
 
 Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis facilisi dignissim gravida habitant elit, nulla iaculis primis. Nisl vestibulum nisl consectetur mauris diam integer netus. Dis erat consequat inceptos laoreet lacinia faucibus. Maximus vel consequat velit nascetur ad lectus. Dapibus class mi quis tempor congue arcu leo ut elit. Nascetur eleifend porta, sem et odio vivamus sit. Iaculis sem nisl lacus neque sapien vitae suspendisse massa eget!

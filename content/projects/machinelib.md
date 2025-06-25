@@ -1,14 +1,15 @@
 ---
-title: "Machine<wbr />Lib"
+title: Machine<wbr />Lib
 subtitle: Library mod for Galacticraft
 date: 2022-03-05T09:46:52-08:00
+timeframe: 2022-present
 icon: /image/machinelib.png
 description: |
   A library for Minecraft mods that simplifies the implementation of complex blocks that process resources.
 repository: https://github.com/TeamGalacticraft/MachineLib
-languages:
-  - java
-  - gradle
+tools:
+  - Java
+  - Gradle
 ---
 
 ## About

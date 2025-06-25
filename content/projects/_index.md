@@ -1,6 +1,6 @@
 ---
-title: "Projects"
-description: Things I've created
+title: Projects
+description: Things I've created.
 ---
 
 # Projects

@@ -2,13 +2,14 @@
 title: Chat
 subtitle: An encrypted, ephemeral instant messaging app.
 date: 2023-06-12T12:00:00-00:00
+timeframe: 2023
 icon: /image/chat.png
 description: |
   An encrypted, ephemeral instant messaging app.
 repository: https://github.com/marcus8448/Chat
-languages:
-  - java
-  - gradle
+tools:
+  - Java
+  - Gradle
 ---
 
 ## About

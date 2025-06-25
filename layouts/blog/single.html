@@ -8,17 +8,18 @@
 {{ end }}
 
 {{ define "content-inner" }}
-<main class="content-writing">
+<main>
   <div class="mb-4 min-prs:mb-8">
     <h1>{{ .Title }}</h1>
     {{ with .Params.subtitle }}
     <p class="text-lg subtitle -mb-0.5">{{ . }}</p>
     {{ end }}
-    <p class="text-base meta">{{ .Date | time.Format ":date_long" }} {{ .Date | time.Format ":time_short" }}</p>
+    <p class="text-base text-meta">Published {{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</p>
   </div>
 
   <div class="writing">
     {{ .Content }}
   </div>
+  {{ if ne .PublishDate .Lastmod}} <p class="text-base text-meta mt-12 pt-2 border-t-1">Updated on {{ .Lastmod | time.Format ":date_long" }}</p> {{ end }}
 </main>
 {{ end }}

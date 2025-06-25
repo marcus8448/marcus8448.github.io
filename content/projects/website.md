@@ -1,16 +1,16 @@
 ---
 title: Website
 date: 2020-05-24T16:25:24-07:00
+timeframe: 2020-present
 icon: https://avatars.githubusercontent.com/u/28928887?v=4
 description: |
   My website. Built with Hugo, styled with TailwindCSS, and hosted on GitHub Pages.
 repository: https://github.com/marcus8448/marcus8448.github.io
 link: https://marcus8448.github.io/
-
-languages:
-  - hugo
-  - tailwind
-  - html5
+tools:
+  - Hugo
+  - Tailwind
+  - HTML
 ---
 
 ## About

@@ -1,7 +1,12 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: {{ replace .Name "-" " " | title }}
+subtitle: 
 date: {{ .Date }}
-banner: "{{ .Name }}.png"
+timeframe: {{ (.Date | time.AsTime).Year }}
+icon: /image/{{ .Name | lower }}.png
+description: |
+  
+repository: https://github.com/marcus8448/{{ .Name }}
+tools:
 draft: true
 ---
-

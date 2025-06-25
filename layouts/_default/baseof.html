@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" style="visibility: hidden;">
+<html lang="{{ .Site.LanguageCode }}" class="h-full" style="visibility: hidden;">
 <head>
   <meta charset="utf-8">
   <meta name="theme-color" content="#3e8ed0"/>
@@ -36,7 +36,7 @@
   {{ end }}
 </head>
 
-<body>
+<body class="h-full bg-white text-slate-800 dark:bg-base-dark dark:text-white">
 {{ block "misc" . }}
 {{ end }}
 
@@ -50,9 +50,12 @@
     {{ block "content" . }}
       <div class="flex flex-row flex-grow justify-center">
         {{ block "content-inner" . }}
-          <main class="content-writing writing">
+          <main class="content-writing">
             <h1>{{ .Title }}</h1>
-            {{ .Content }}
+            <p class="text-meta -mt-2">{{ .PublishDate | time.Format ":date_long" }}</p>
+            <div class="writing">
+              {{ .Content }}
+            </div>
           </main>
         {{ end }}
       </div>
@@ -60,11 +63,9 @@
   {{ end }}
 
   {{ block "footer" . }}
-  <footer class="shrink-0">
-    <div class="text-center align-middle m-8">
-      <p class="text-base meta">Copyright &#169; 2022–2025 marcus8448</p>
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">CC&nbsp;BY&nbsp;NC&nbsp;SA&nbsp;4.0</a>
-    </div>
+  <footer class="shrink-0 mt-16 mb-12 text-center text-base align-middle text-meta">
+    <p>{{ .Site.Copyright }}</p>
+    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">CC&nbsp;BY&nbsp;NC&nbsp;SA&nbsp;4.0</a></p>
   </footer>
   {{ end }}
 </div>

@@ -2,14 +2,14 @@
 title: VEX V5
 date: 2021-11-16T18:07:43-07:00
 icon: /image/vex-v5.png
+timeframe: 2021-2024
 description: |
   I participated in the [Vex Robotics Competition](https://www.vexrobotics.com/v5/competition/)
   from 2021-2024.
 repository: https://github.com/marcus8448/VexV5
-languages:
-  - c
-  - cplusplus
-  - cmake
+tools:
+  - C++
+  - CMake
 ---
 
 ## About

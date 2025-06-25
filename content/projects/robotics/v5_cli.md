@@ -2,10 +2,11 @@
 title: v5_cli
 date: 2022-12-12T22:17:00-08:00
 icon: /image/v5_cli.png
+timeframe: 2022-2024
 description: A re-implementation of [pros-cli](https://github.com/purduesigbots/pros-cli) in Rust, adding bluetooth upload support.
 repository: https://github.com/marcus8448/v5_cli
-languages:
-  - rust
+tools:
+  - Rust
 ---
 
 ## About

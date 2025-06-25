@@ -2,6 +2,7 @@
 title: Galacticraft
 subtitle: An advanced space mod for Minecraft.
 date: 2019-03-18T11:12:29-07:00
+timeframe: 2019-present
 icon: /image/galacticraft.png
 description: |
   A Minecraft mod centered around space exploration using the [FabricMC](https://fabricmc.net/) modding framework.
@@ -9,9 +10,9 @@ repository: https://github.com/TeamGalacticraft/Galacticraft
 link: https://galacticraft.net/
 modrinth: galacticraft-legacy
 curseforge: galacticraft-legacy
-languages:
-  - java
-  - gradle
+tools:
+  - Java
+  - Gradle
 ---
 
 ## About
