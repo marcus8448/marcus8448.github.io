@@ -38,7 +38,7 @@ with tight integration between the storage and block implementations with a focu
     * Comes with a built-in GUI to manage the configuration
     * Push/pull transfer automatically handed based on selected ports
   * Automatic (de)activation with Minecraft redstone signals
-  * Extended menu sychronization system
+  * Extended menu synchronization system
     * No longer constrained to pure `int` synchronization
 * Comes with an extensible `GameTest` framework 
   * Allows for full in-world testing of complicated machine setups

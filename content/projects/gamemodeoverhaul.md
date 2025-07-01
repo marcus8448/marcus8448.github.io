@@ -7,7 +7,7 @@ icon: /image/gamemodeoverhaul.png
 description: |
   A mod for Minecraft that restores command options removed in the 1.13 update.
   Also adds some shorthand commands for convenience.
-repository: https://github.com/marcus8448/MinecraftMods
+repository: https://github.com/marcus8448/GamemodeOverhaul
 modrinth: gamemodeoverhaul
 curseforge: gamemodeoverhaul
 tools:
