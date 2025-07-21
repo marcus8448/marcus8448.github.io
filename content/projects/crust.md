@@ -11,7 +11,6 @@ repository: https://github.com/marcus8448/crust
 tools:
   - C
   - CMake
-draft: true
 ---
 
 ## About
@@ -26,7 +25,7 @@ tokenization, preprocessing, syntax tree generation, register allocation, and fi
 
 ### Example program
 
-Fibonacci generator
+Recursive fibonacci generator
 ```rust
 extern fn puts(str: [u8]) -> i32;
 extern fn printf(fmt: [u8], num: i64, num2: i64) -> i32;
