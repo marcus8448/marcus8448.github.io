@@ -12,7 +12,6 @@ tools:
   - Gradle
 ---
 
-## About
 MachineLib aims to reduce the amount of boilerplate code required to implement complicated "machine" blocks
 that interact with items, fluids and energy.
 

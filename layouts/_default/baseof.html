@@ -1,74 +1,71 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}" class="h-full" style="visibility: hidden;">
-<head>
-  <meta charset="utf-8">
-  <meta name="theme-color" content="#3e8ed0"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ .Description }}"/>
-  <meta name="keywords" content="marcus8448"/>
-  <meta name="author" content="marcus8448"/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#3e8ed0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ .Description }}"/>
+    <meta name="keywords" content="marcus8448"/>
+    <meta name="author" content="marcus8448"/>
 
-  {{ block "title" . }}
-    <title>{{.Title}} | marcus8448</title>
-    <meta property="og:title" content="{{ .Title }} | marcus8448">
-  {{ end }}
-
-  <meta property="og:description" content="{{ .Description }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ .RelPermalink }}">
-  <meta name="color-scheme" content="light dark">
-
-  {{ block "icons" . }}
-    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=16" sizes="16x16">
-    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=32" sizes="32x32">
-    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/28928887?size=192">
-  {{ end }}
-
-  {{- with (templates.Defer (dict "key" "global")) -}}
-    {{- partialCached "css.html" . -}}
-  {{- end -}}
-
-  {{ with resources.Get "main.js" | js.Build (dict "minify" "true") }}
-    <script src="{{ .RelPermalink }}" defer></script>
-  {{ end }}
-
-  {{ block "head" . }}
-  {{ end }}
-</head>
-
-<body class="h-full bg-white text-slate-800 dark:bg-base-dark dark:text-white">
-{{ block "misc" . }}
-{{ end }}
-
-{{- partialCached "nav.html" . -}}
-
-<div class="flex flex-col" style="min-height: calc(100% - var(--spacing) * 12);">
-  {{ block "main" . }}
-    {{ block "pre" . }}
+    {{ block "title" . }}
+      <title>{{.Title}} | marcus8448</title>
+      <meta property="og:title" content="{{ .Title }} | marcus8448">
     {{ end }}
 
-    {{ block "content" . }}
-      <div class="flex flex-row flex-grow justify-center">
-        {{ block "content-inner" . }}
-          <main class="content-writing">
-            <h1>{{ .Title }}</h1>
-            <p class="text-meta -mt-2">{{ .PublishDate | time.Format ":date_long" }}</p>
-            <div class="writing">
-              {{ .Content }}
-            </div>
-          </main>
-        {{ end }}
-      </div>
+    <meta property="og:description" content="{{ .Description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .RelPermalink }}">
+    <meta name="color-scheme" content="light dark">
+
+    {{ block "icons" . }}
+      <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=16" sizes="16x16">
+      <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=32" sizes="32x32">
+      <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/28928887?size=192">
     {{ end }}
-  {{ end }}
 
-  {{ block "footer" . }}
-  <footer class="shrink-0 mt-16 mb-12 text-center text-base align-middle text-meta">
-    <p>{{ .Site.Copyright }}</p>
-    <p><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">CC&nbsp;BY&nbsp;NC&nbsp;SA&nbsp;4.0</a></p>
-  </footer>
-  {{ end }}
-</div>
+    {{- with (templates.Defer (dict "key" "global")) -}}
+      {{- partialCached "css.html" . -}}
+    {{- end -}}
 
-</body>
+    {{ with resources.Get "main.js" | js.Build (dict "minify" "true") }}
+      <script src="{{ .RelPermalink }}" defer></script>
+    {{ end }}
+
+    {{ block "head" . }}
+    {{ end }}
+  </head>
+
+  <body>
+    {{ block "misc" . }}
+    {{ end }}
+
+    {{- partialCached "nav.html" . -}}
+
+    {{ block "main" . }}
+      {{ block "pre" . }}
+      {{ end }}
+
+      {{ block "content" . }}
+        <div style="display: flex; flex-direction: row; flex-grow: 1; justify-content: center;">
+          {{ block "content-inner" . }}
+            <main class="content-writing">
+              <h1>{{ .Title }}</h1>
+              <time class="text-meta" style="margin-top: -0.5rem">{{ .PublishDate | time.Format ":date_long" }}</time>
+              <div class="markdown">
+                {{ .Content }}
+              </div>
+            </main>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+
+    {{ block "footer" . }}
+      <footer class="footer">
+        <p class="text-meta">{{ .Site.Copyright }}</p>
+        <p class="text-meta"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC&nbsp;BY&nbsp;NC&nbsp;SA&nbsp;4.0</a></p>
+      </footer>
+    {{ end }}
+  </body>
 </html>

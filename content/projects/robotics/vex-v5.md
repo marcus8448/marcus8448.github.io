@@ -12,7 +12,6 @@ tools:
   - CMake
 ---
 
-## About
 From 2021-2024, I started competed in the VEX robotics competition.
 Being an embedded C/C++ project, I learned lots about cross compilation and build systems.
 On the robotics side, I learned some basic control theory to make the robot run as smooth as possible.

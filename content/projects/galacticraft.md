@@ -7,7 +7,6 @@ icon: /image/galacticraft.png
 description: |
   A Minecraft mod centered around space exploration using the [FabricMC](https://fabricmc.net/) modding framework.
 repository: https://github.com/TeamGalacticraft/Galacticraft
-link: https://galacticraft.net/
 modrinth: galacticraft-legacy
 curseforge: galacticraft-legacy
 tools:
@@ -15,7 +14,6 @@ tools:
   - Gradle
 ---
 
-## About
 
 I started to contribute to Galacticraft (4) through issue/bug reports in 2017 and pull requests in 2018.
 In 2019, I was invited to work on Galacticraft 5 (called Galacticraft: Rewoven at the time) and have worked on it since then.

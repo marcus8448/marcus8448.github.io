@@ -4,21 +4,19 @@ date: 2020-05-24T16:25:24-07:00
 timeframe: 2020-present
 icon: https://avatars.githubusercontent.com/u/28928887?v=4
 description: |
-  My website. Built with Hugo, styled with TailwindCSS, and hosted on GitHub Pages.
+  My website. Built with Hugo, and hosted on GitHub Pages.
 repository: https://github.com/marcus8448/marcus8448.github.io
 link: https://marcus8448.github.io/
 tools:
   - Hugo
-  - Tailwind
   - HTML
+  - CSS
 ---
 
-## About
 This website is generated using [Hugo] and hosted on GitHub Pages.
-The theme is custom-designed using utility classes from [TailwindCSS].
 The majority of the icons used on the site are from [Simple Icons] and [Font Awesome].
 
-This iteration of the website replaced Bulma with Tailwind
+This iteration of the website replaced Bulma with plain CSS
 to get more fine-grained control over the design of the website.
 Another contributing factor was the excessive size of the Bulma CSS stylesheet.
 The extensive use of CSS variables in Bulma 1.0 caused the minified stylesheet to exceed 100KB in size. 
@@ -43,4 +41,3 @@ This time I tried to focus on making the website responsive, rather than solely 
 [Font Awesome]: https://github.com/FortAwesome/Font-Awesome
 [Hugo]: https://gohugo.io/
 [Simple Icons]: https://simpleicons.org/
-[TailwindCSS]: https://tailwindcss.com/

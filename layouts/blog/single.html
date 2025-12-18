@@ -9,17 +9,21 @@
 
 {{ define "content-inner" }}
 <main>
-  <div class="mb-4 min-prs:mb-8">
+  <div class="post-heading">
     <h1>{{ .Title }}</h1>
     {{ with .Params.subtitle }}
-    <p class="text-lg subtitle -mb-0.5">{{ . }}</p>
+      <p class="subtitle">{{ . }}</p>
     {{ end }}
-    <p class="text-base text-meta">Published {{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</p>
+    <p class="text-meta">Published <time>{{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</time></p>
   </div>
 
-  <div class="writing">
+  <div class="markdown">
     {{ .Content }}
   </div>
-  {{ if ne .PublishDate .Lastmod}} <p class="text-base text-meta mt-12 pt-2 border-t-1">Updated on {{ .Lastmod | time.Format ":date_long" }}</p> {{ end }}
+  {{ if ne .PublishDate .Lastmod}}
+    <footer style="margin-top: 2rem; border-top: solid 1px var(--spacer-color);">
+      <p class="text-meta">Updated on <time>{{ .Lastmod | time.Format ":date_long" }}</time></p>
+    </footer>
+  {{ end }}
 </main>
 {{ end }}

@@ -13,7 +13,6 @@ tools:
   - CMake
 ---
 
-## About
 Crust is an experimental compiler for a C-like language with Rust-like syntax.
 Crust supports for loops, conditionals, and external C functions.
 It follows the x86-64 System-V ABI, allowing for C function calls both into and out of the program.

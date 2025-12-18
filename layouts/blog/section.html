@@ -2,23 +2,21 @@
 <main>
   {{ .Content }}
 
-  <div class="flex flex-col border-t mt-8">
+  <ul class="list">
     {{ with .Site.GetPage "/blog" }}
-    {{ range .RegularPages }}
-      <article class="block listing">
-        <h2 class="-mt-2">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-        <p class="text-sm text-meta pb-2">
-          {{ .Date | time.Format ":date_medium" }}
-        </p>
-        <p class="text-base text-gray-800 dark:text-gray-100 text-pretty">
-          {{ .Params.Description | .RenderString }}
-        </p>
-      </article>
+      {{ range .RegularPages }}
+        <li>
+          <article class="post">
+            <div class="info">
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <time class="text-meta">{{ .Date | time.Format ":date_medium" }}</time>
+            </div>
+            <p class="description">{{ .Params.Description | .RenderString }}</p>
+          </article>
+        </li>
+      {{ end }}
     {{ end }}
-    {{ end }}
-  </div>
+  </ul>
 </main>
 {{ end }}
 

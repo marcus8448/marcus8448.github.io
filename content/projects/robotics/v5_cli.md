@@ -9,7 +9,6 @@ tools:
   - Rust
 ---
 
-## About
 After getting frustrated with [pros-cli](https://github.com/purduesigbots/pros-cli)
 freezing my terminal (to submit a bug report) every time an error occurred, I decided to create my own implementation.
 I chose to (re)write it in Rust mainly to gain experience with the language,

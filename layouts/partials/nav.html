@@ -1,41 +1,37 @@
-<div class="flex flex-row justify-between fixed w-full z-10 h-12 pl-3 pr-3 gap-4 bg-sky-700 dark:bg-sky-900 text-gray-100">
-  <div class="flex flex-row items-center shrink-0 gap-4">
-    <a href="/"><img src="https://avatars.githubusercontent.com/u/28928887?size=64" alt="marcus8448" class="rounded-xl size-8"></a>
-    <p class="text-base max-[32rem]:hidden max-xs:inline">marcus8448</p>
-  </div>
-  <div class="flex flex-row items-center justify-between gap-4 w-full max-xs:hidden">
-    <div class="flex flex-row items-center gap-2 h-full">
-      <div class="border-l h-8 mx-1 max-xs:hidden"></div>
-      <a class="text-sm hover:text-gray-300 px-1" href="/">Home</a>
-      <a class="text-sm hover:text-gray-300 px-1" href="/blog">Blog</a>
-      <a class="text-sm hover:text-gray-300 px-1" href="/projects">Projects</a>
-      <a class="text-sm hover:text-gray-300 px-1" href="/contact">Contact</a>
+<nav class="normal">
+  <a href="/" class="logo">
+    <img src="https://avatars.githubusercontent.com/u/28928887?size=128" alt="marcus8448">
+    <p class="text-base">marcus8448</p>
+  </a>
+  <div class="links hidden-small">
+    <div class="left">
+      <div style="border-left: solid 1px; height: 2rem; margin-inline: 0.25rem;"></div>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/projects">Projects</a>
+      <a href="/contact">Contact</a>
     </div>
 
-    <div class="flex items-center gap-4 max-xs:hidden">
+    <div class="right">
       {{ block "nav-links" . }}
       {{ end }}
       <a aria-label="GitHub Account" href="https://github.com/marcus8448">
-        <img src="/icon/github.svg" alt="GitHub Logo" class="invert size-6">
+        <img src="/icon/github.svg" alt="GitHub Logo" style="filter: invert(1)">
       </a>
     </div>
   </div>
-  <div class="hidden max-xs:flex flex-row items-center shrink-0 h-full">
-    <a id="nav-burger" role="button" class="max-xs:flex flex-col gap-1.5" aria-label="menu" aria-expanded="false">
-      <span class="border-t w-5" aria-hidden="true"> </span>
-      <span class="border-t w-5" aria-hidden="true"> </span>
-      <span class="border-t w-5" aria-hidden="true"> </span>
-    </a>
-  </div>
-</div>
+  <a id="nav-burger" role="button" class="burger" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"> </span>
+    <span aria-hidden="true"> </span>
+    <span aria-hidden="true"> </span>
+  </a>
+</nav>
 
-<div class="h-12"><!--HACK: spacing for navbar--></div>
+<div style="min-height: 3rem"><!--HACK: spacing for fixed navbar--></div>
 
-<div id="nav-dropdown" class="fixed z-10 hidden min-xs:!hidden flex-col w-full bg-sky-600 dark:bg-sky-800 text-gray-100">
-  <div class="flex flex-col items-start justify-between w-full">
-    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/">Home</a>
-    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/blog">Blog</a>
-    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/projects">Projects</a>
-    <a class="text-sm hover:text-gray-300 p-3 w-full hover:bg-sky-500 hover:dark:bg-sky-700" href="/contact">Contact</a>
-  </div>
-</div>
+<nav id="nav-dropdown" class="vertical hidden">
+  <a href="/">Home</a>
+  <a href="/blog">Blog</a>
+  <a href="/projects">Projects</a>
+  <a href="/contact">Contact</a>
+</nav>

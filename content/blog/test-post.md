@@ -1,6 +1,6 @@
 ---
-title: Lorem Ipsum
-subtitle: To be, or not to be, that is the question
+title: Test Post
+subtitle: Lorem ipsum odor amet, consectetuer adipiscing elit.
 description: Lorem ipsum odor amet, consectetuer adipiscing elit. Iaculis facilisi dignissim gravida habitant elit, nulla iaculis primis.
 date: 2025-01-01T00:00:00-00:00
 lastmod: 2025-06-01T00:00:00-00:00

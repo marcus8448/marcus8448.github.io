@@ -15,7 +15,6 @@ tools:
   - Gradle
 ---
 
-## About
 
 This was my first published Minecraft modification, originally released in February 2019.
 Created in the span of two weeks, the original goal of this mod was to simply restore the integer `/gamemode` arguments

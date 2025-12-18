@@ -5,32 +5,29 @@
 
 {{ define "content-inner" }}
 <main>
-  <div class="flex mb-10 gap-4">
+  <div class="title-container">
       {{ if .Params.icon }}
-        <img src="{{ .Params.icon }}" class="inline-block aspect-square w-20 rounded-lg s" alt="{{ .Title | plainify }}">
+        <img src="{{ .Params.icon }}" class="icon" alt="{{ .Title | plainify }}">
       {{ end }}
 
-      <div class="flex flex-col justify-center">
-        <h1 class="text-5xl font-bold !mb-1">
-          {{ .Title | safeHTML }}
-        </h1>
+      <div class="title">
+        <h1>{{ .Title | safeHTML }}</h1>
 
-        <p class="text-lg font-normal ml-1">
-          {{ .Params.Subtitle }}
-        </p>
+        <p>{{ .Params.Subtitle }}</p>
       </div>
   </div>
 
-  <div class="writing text-pretty">
+  <div class="markdown text-pretty">
     {{ .Content }}
   </div>
 
-  <div class="text-center mt-16">
+  <div class="badges">
     {{ partial "project-button.html" (dict
     "link" .Params.link
     "icon" "/icon/external-link.svg"
     "text" "Project Page"
     "alt" "External Link Icon"
+    "invert" "true"
     )}}
     {{ if .Params.modrinth }}
     {{ partial "project-button.html" (dict

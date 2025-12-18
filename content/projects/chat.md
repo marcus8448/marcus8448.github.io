@@ -12,7 +12,6 @@ tools:
   - Gradle
 ---
 
-## About
 This was a project that I made in approximately 2 weeks to gain more experience with networking and JavaFX.
 It uses a multi-project Gradle build to enable code sharing between the client and server applications,
 while keeping them as separate binaries.
