@@ -1,6 +1,6 @@
-{{ if .link }}
+{{- if .link -}}
   <a href="{{ .link }}" class="badge-link">
     <img src="{{ .icon }}" alt="{{ .alt }}" class="{{ if .invert }} invert-dark {{ end }}">
     <span class="text x">{{ .text }}</span>
   </a>
-{{ end }}
+{{- end -}}

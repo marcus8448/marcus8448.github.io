@@ -1,0 +1,9 @@
+{{ define "main" }}
+<hgroup class="post-heading">
+  <h1>{{ .Title }}</h1>
+  <p class="post-date text-meta"><time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_long" }}</time></p>
+</hgroup>
+<div class="text-content">
+  {{ .Content }}
+</div>
+{{ end }}

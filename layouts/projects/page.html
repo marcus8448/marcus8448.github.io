@@ -1,0 +1,67 @@
+{{ define "title" }}
+<title>{{ .Title | plainify }} | Projects</title>
+<meta property="og:title" content="{{ .Title | plainify }} | Projects">
+{{ end }}
+
+{{ define "main" }}
+<div class="title-container">
+  {{ if .Params.icon }}
+  <img referrerpolicy="no-referrer" src="{{ .Params.icon }}" class="icon" alt="{{ .Title | plainify }}">
+  {{ end }}
+
+  <div class="title">
+    <h1>{{ .Title | safeHTML }}</h1>
+
+    <p>{{ .Params.Subtitle }}</p>
+  </div>
+</div>
+
+<div class="text-content">
+  {{ .Content }}
+</div>
+
+<div class="badges">
+  {{- partial "project-button.html" (dict
+  "link" .Params.link
+  "icon" "/icon/external-link.svg"
+  "text" "Project Page"
+  "alt" "External Link Icon"
+  "invert" "true"
+  ) -}}
+  {{ if .Params.modrinth }}
+  {{- partial "project-button.html" (dict
+  "link" (printf "%s%s" "https://modrinth.com/mod/" .Params.modrinth)
+  "icon" "/icon/modrinth.svg"
+  "text" "Modrinth"
+  "alt" "Modrinth Logo"
+  ) -}}
+  {{- end -}}
+  {{- if .Params.curseforge -}}
+  {{- partial "project-button.html" (dict
+  "link" (printf "%s%s" "https://www.curseforge.com/minecraft/mc-mods/" .Params.curseforge)
+  "icon" "/icon/curseforge.svg"
+  "text" "CurseForge"
+  "alt" "CurseForge Logo"
+  ) -}}
+  {{- end -}}
+  {{- partial "project-button.html" (dict
+  "link" .Params.docs
+  "icon" "/icon/book.svg"
+  "text" "Documentation"
+  "alt" "Book Icon"
+  "invert" "true"
+  ) -}}
+  {{- partial "project-button.html" (dict
+  "link" .Params.repository
+  "icon" "/icon/git.svg"
+  "text" "Repository"
+  "alt" "Git Icon"
+  ) -}}
+</div>
+{{- end -}}
+
+{{- define "css" -}}
+{{- with (templates.Defer (dict "key" "global")) -}}
+{{- partialCached "css.html" "project.css" "project.css" -}}
+{{- end -}}
+{{- end -}}

@@ -1,0 +1,48 @@
+ul.list {
+  display: block;
+  padding-left: 0;
+
+  > li {
+    display: block;
+    padding-inline: 1rem;
+    padding-block: 1rem;
+    margin-block: -0.5px;
+  }
+}
+
+article.project {
+  display: block;
+  min-height: 6rem; /*floating img size*/
+
+  .icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: inline-block;
+    float: left;
+    margin-right: 1rem;
+
+    img {
+      width: 6rem;
+      aspect-ratio: 1;
+      border-radius: 0.5rem;
+      object-fit: contain;
+    }
+  }
+
+  ul.tools {
+    display: flex;
+    flex-direction: row;
+    @media (width < 40rem) {
+      flex-direction: column;
+    }
+
+    gap: 0.375rem;
+    float: right;
+
+    img {
+      width: 1.5rem;
+      aspect-ratio: 1;
+      float: right;
+    }
+  }
+}

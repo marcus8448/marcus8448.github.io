@@ -21,7 +21,7 @@ Created in the span of two weeks, the original goal of this mod was to simply re
 (which were removed in the 1.13 update), but has since expanded to include other commands and aliases.
 
 GamemodeOverhaul supports over eight versions of Minecraft and two different mod loaders.
-Since its initial release, GamemodeOverhaul has seen over 500,000 downloads.
+Since its initial release, it has seen over 500,000 downloads.
 
 ## Features
 

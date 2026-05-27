@@ -2,11 +2,11 @@
 title: Website
 date: 2020-05-24T16:25:24-07:00
 timeframe: 2020-present
-icon: https://avatars.githubusercontent.com/u/28928887?v=4
+icon: https://avatars.githubusercontent.com/u/28928887?size=16
 description: |
   My website. Built with Hugo, and hosted on GitHub Pages.
-repository: https://github.com/marcus8448/marcus8448.github.io
-link: https://marcus8448.github.io/
+repository: https://github.com/marcus8448/website
+link: https://mlow.dev/
 tools:
   - Hugo
   - HTML
@@ -18,8 +18,6 @@ The majority of the icons used on the site are from [Simple Icons] and [Font Awe
 
 This iteration of the website replaced Bulma with plain CSS
 to get more fine-grained control over the design of the website.
-Another contributing factor was the excessive size of the Bulma CSS stylesheet.
-The extensive use of CSS variables in Bulma 1.0 caused the minified stylesheet to exceed 100KB in size. 
 
 ## Previous Versions
 ### Jekyll (2020-2021)

@@ -1,9 +1,10 @@
-baseURL = 'https://marcus8448.github.io/'
+baseURL = 'https://mlow.dev/'
 languageCode = 'en-ca'
 title = 'marcus8448'
-copyright = 'Copyright © 2022–2025 marcus8448'
+copyright = 'Copyright &copy; 2022–2026 marcus8448'
 
 [params]
+blurb = "Hello world"
   [params.author]
     name = 'marcus8448'
 
@@ -13,7 +14,7 @@ copyright = 'Copyright © 2022–2025 marcus8448'
 
 [markuo]
   [markup.highlight]
-    style = "catppuccin-frappe"
+    style = "nord"
 
 [module]
   [[module.mounts]]

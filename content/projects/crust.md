@@ -1,7 +1,7 @@
 ---
 title: Crust
 subtitle: Toy compiler
-date: 2025-06-24T22:53:35-07:00
+date: 2024-06-24T22:53:35-07:00
 publishDate: 2025-07-01T08:00:00-07:00
 timeframe: 2023-2024
 icon: /image/crust.png
@@ -24,7 +24,8 @@ tokenization, preprocessing, syntax tree generation, register allocation, and fi
 
 ### Example program
 
-Recursive fibonacci generator
+A recursive fibonacci generator
+
 ```rust
 extern fn puts(str: [u8]) -> i32;
 extern fn printf(fmt: [u8], num: i64, num2: i64) -> i32;

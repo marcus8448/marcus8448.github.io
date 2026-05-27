@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#f0f5f0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ .Description }}"/>
+  <meta name="author" content="marcus8448"/>
+
+  {{- if .Title -}}
+  <title>{{.Title}} | {{ .Site.Title }}</title>
+  <meta property="og:title" content="{{ .Title }}">
+  {{- end -}}
+  {{- if .Description -}}
+  <meta property="og:description" content="{{ .Description }}">
+  {{- end -}}
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+
+  {{- block "icons" . -}}
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=16" sizes="16x16">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=32" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/28928887?size=48" sizes="48x48">
+  <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/28928887?size=192">
+  {{- end -}}
+
+  {{- with (templates.Defer (dict "key" "global")) -}}
+  {{- partialCached "css.html" "base.css" "base.css" -}}
+  {{- partialCached "css.html" "colours.css" "colours.css" -}}
+  {{- end -}}
+  {{- block "css" . -}}
+  <!-- -->
+  {{- end -}}
+</head>
+<body>
+<a class="a11y-text" href="#main">Skip to main content</a>
+<div class="container">
+  <header class="header">
+    <div>
+      <!--      <a href="/" aria-label="Homepage" draggable="false">-->
+      <img src="https://avatars.githubusercontent.com/u/28928887?size=16" alt="marcus8448's Profile Picture">
+      <hgroup>
+        <h2 class="title">marcus8448</h2>
+        <p class="subtitle">{{ default (.Site.Param "blurb") (.Page.Param "blurb") }}</p>
+      </hgroup>
+      <!--      </a>-->
+    </div>
+    <ul class="links">
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <!--      <li><a href="/blog">Blog</a></li>-->
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="https://github.com/marcus8448">GitHub</a></li>
+    </ul>
+  </header>
+  <main id="main">
+    {{- block "main" . -}}
+    {{ .Content }}
+    {{- end -}}
+  </main>
+  <footer>
+    <small>{{ .Site.Copyright | safeHTML }}</small>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><small>CC&nbsp;BY-NC-SA&nbsp;4.0</small></a>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,9 +1,9 @@
-{{- with resources.Get "main.css" -}}
+{{- with resources.Get . -}}
   {{- if hugo.IsProduction -}}
     {{- with . | minify | fingerprint -}}
     <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
-    {{- end -}}
-  {{- else -}}
+      {{- end -}}
+    {{- else -}}
     <link rel="stylesheet" href="{{ .RelPermalink }}" />
   {{- end -}}
 {{- end -}}

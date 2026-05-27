@@ -1,25 +1,19 @@
-{{ define "content-inner" }}
-<main>
-  {{ .Content }}
+{{ define "main" }}
+{{ .Content }}
 
-  <ul class="list">
-    {{ with .Site.GetPage "/blog" }}
-      {{ range .RegularPages }}
-        <li>
-          <article class="post">
-            <div class="info">
-              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-              <time class="text-meta">{{ .Date | time.Format ":date_medium" }}</time>
-            </div>
-            <p class="description">{{ .Params.Description | .RenderString }}</p>
-          </article>
-        </li>
-      {{ end }}
+<ul class="list">
+  {{ with .Site.GetPage "/blog" }}
+    {{ range .RegularPages }}
+      <li>
+        <article class="post">
+          <div class="info">
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <time class="text-meta">{{ .Date | time.Format ":date_medium" }}</time>
+          </div>
+          <p class="description">{{ .Params.Description | .RenderString }}</p>
+        </article>
+      </li>
     {{ end }}
-  </ul>
-</main>
+  {{ end }}
+</ul>
 {{ end }}
-
-{{ define "misc" }}
-{{ partialCached "blog-links.html" . }}
-{{end}}
