@@ -2,12 +2,21 @@
 title: "Home"
 description: Homepage
 blurb: A software developer
-date: "2025-01-01T00:00:00-00:00"
+date: "2026-01-01T00:00:00-00:00"
 ---
+<style>
+  main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    @media (min-width: 52em) {
+      height: 10rem;
+    }
+  }
+</style>
 
-<div style="display: grid; align-items: center; height: 100%;">
-  <hgroup>
-    <h1>Hi, my name is Marcus.</h1>
-    <p>I'm a programmer from Canada with an interest in compilers.</p>
-  </hgroup>
-</div>
+<hgroup>
+  <h1>Hi, my name is Marcus.</h1>
+  <p class="subtitle">I'm a programmer from Canada with an interest in compilers.</p>
+</hgroup>

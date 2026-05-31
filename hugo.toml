@@ -14,6 +14,7 @@ blurb = "Hello world"
 
 [markuo]
   [markup.highlight]
+    noClasses = false
     style = "nord"
 
 [module]

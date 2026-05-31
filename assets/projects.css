@@ -26,6 +26,7 @@ article.project {
       aspect-ratio: 1;
       border-radius: 0.5rem;
       object-fit: contain;
+      margin-bottom: -0.1rem;
     }
   }
 

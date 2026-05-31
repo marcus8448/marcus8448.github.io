@@ -61,7 +61,6 @@
 {{- end -}}
 
 {{- define "css" -}}
-{{- with (templates.Defer (dict "key" "global")) -}}
-{{- partialCached "css.html" "project.css" "project.css" -}}
-{{- end -}}
+{{- partial "css.html" "project.css" "project.css" -}}
+{{- partial "css.html" "code.css" "code.css" -}}
 {{- end -}}

@@ -25,8 +25,9 @@
   {{- end -}}
 
   {{- with (templates.Defer (dict "key" "global")) -}}
-  {{- partialCached "css.html" "base.css" "base.css" -}}
-  {{- partialCached "css.html" "colours.css" "colours.css" -}}
+  {{- partial "css.html" "base.css" "base.css" -}}
+  {{- partial "mobile-css.html" "mobile.css" "mobile.css" -}}
+  {{- partial "desktop-css.html" "desktop.css" "desktop.css" -}}
   {{- end -}}
   {{- block "css" . -}}
   <!-- -->
@@ -36,17 +37,17 @@
 <a class="a11y-text" href="#main">Skip to main content</a>
 <div class="container">
   <header class="header">
-    <div>
+    <div class="heading">
       <!--      <a href="/" aria-label="Homepage" draggable="false">-->
-      <img src="https://avatars.githubusercontent.com/u/28928887?size=16" alt="marcus8448's Profile Picture">
-      <hgroup>
+      <img src="https://avatars.githubusercontent.com/u/28928887?size=16" alt="marcus8448's Profile Picture"><!--
+      --><hgroup>
         <h2 class="title">marcus8448</h2>
         <p class="subtitle">{{ default (.Site.Param "blurb") (.Page.Param "blurb") }}</p>
       </hgroup>
       <!--      </a>-->
     </div>
     <ul class="links">
-      <li><a href="/">Homepage</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
       <!--      <li><a href="/blog">Blog</a></li>-->
       <li><a href="/contact">Contact</a></li>

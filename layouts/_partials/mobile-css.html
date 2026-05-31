@@ -1,0 +1,9 @@
+{{- with resources.Get . -}}
+  {{- if hugo.IsProduction -}}
+    {{- with . | minify | fingerprint -}}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" media="screen and (max-width: 52em)"/>
+      {{- end -}}
+    {{- else -}}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" media="screen and (max-width: 52em)"/>
+  {{- end -}}
+{{- end -}}
