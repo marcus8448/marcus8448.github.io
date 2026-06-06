@@ -4,20 +4,19 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="title-container">
-  {{ if .Params.icon }}
+<div class="icon-title">
+  {{- if .Params.icon -}}
   <img referrerpolicy="no-referrer" src="{{ .Params.icon }}" class="icon" alt="{{ .Title | plainify }}">
-  {{ end }}
+  {{- end -}}
 
-  <div class="title">
+  <hgroup class="title">
     <h1>{{ .Title | safeHTML }}</h1>
-
-    <p>{{ .Params.Subtitle }}</p>
-  </div>
+    <p role="doc-subtitle">{{ .Params.Subtitle }}</p>
+  </hgroup>
 </div>
 
-<div class="text-content">
-  {{ .Content }}
+<div class="content">
+  {{- .Content -}}
 </div>
 
 <div class="badges">

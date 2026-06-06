@@ -9,15 +9,15 @@
   {{- with .Params.subtitle -}}
     <p class="subtitle">{{ . }}</p>
   {{- end -}}
-  <p class="text-meta">Published <time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</time></p>
+  <p class="date-meta">Published <time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</time></p>
 </hgroup>
 
-<div class="markdown">
+<div class="content">
   {{ .Content }}
 </div>
 {{- if ne .PublishDate .Lastmod -}}
   <footer style="margin-top: 2rem; border-top: solid 1px var(--text);">
-    <p class="text-meta">Updated on <time datetime='{{ .Lastmod | time.Format "2006-01-02" }}'>{{ .Lastmod | time.Format ":date_long" }}</time></p>
+    <p class="date-meta">Updated on <time datetime='{{ .Lastmod | time.Format "2006-01-02" }}'>{{ .Lastmod | time.Format ":date_long" }}</time></p>
   </footer>
 {{- end -}}
 {{- end -}}

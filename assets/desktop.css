@@ -18,17 +18,6 @@ body {
 
 .header {
   padding-bottom: 0.5rem;
-
-  .subtitle {
-    font-size: 1.0rem;
-    margin-top: -0.75rem;
-    text-align: right;
-    text-transform: lowercase;
-  }
-
-  @media screen and (max-width: 40em) {
-    display: block;
-  }
 }
 
 .highlight {

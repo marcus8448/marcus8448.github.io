@@ -21,9 +21,9 @@
         {{ end }}
       </ul>
 
-      <hgroup class="info">
+      <hgroup class="title">
         <h2><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
-        <p class="text-meta">{{ (replace .Params.timeframe "-" "&#8209;") | safeHTML }}</p>
+        <p class="date-meta"><small>{{ (replace .Params.timeframe "-" "&#8209;") | safeHTML }}</small></p>
       </hgroup>
       <p class="description">{{ .Params.Description | safeHTML }}</p>
     </article>

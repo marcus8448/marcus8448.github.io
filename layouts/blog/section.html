@@ -8,7 +8,7 @@
         <article class="post">
           <div class="info">
             <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <time class="text-meta">{{ .Date | time.Format ":date_medium" }}</time>
+            <time class="date-meta">{{ .Date | time.Format ":date_medium" }}</time>
           </div>
           <p class="description">{{ .Params.Description | .RenderString }}</p>
         </article>

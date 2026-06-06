@@ -16,6 +16,8 @@ blurb = "Hello world"
   [markup.highlight]
     noClasses = false
     style = "nord"
+#    lineNos = true
+#    lineNumbersInTable = false
 
 [module]
   [[module.mounts]]

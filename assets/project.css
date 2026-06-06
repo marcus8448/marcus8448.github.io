@@ -32,37 +32,34 @@ a.badge-link:hover {
   }
 }
 
-.title-container {
+.icon-title {
   display: flex;
   padding-bottom: 1rem;
-  gap: 1rem;
-
-  img.icon {
-    width: 5rem;
-    height: 5rem;
-    aspect-ratio: 1;
-    border-radius: 0.75rem;
-    object-fit: contain;
-  }
-
-  .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    * {
-      margin: 0;
-    }
-
-    h2 {
-      margin-bottom: 0.25rem;
-    }
-    p {
-      margin-left: 0.25rem;
-      font-size: 1.0625rem;
-    }
-  }
+  gap: 0.5rem;
 }
+
+.icon-title .icon {
+  width: 5rem;
+  height: 5rem;
+  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  object-fit: contain;
+}
+
+.icon-title .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-title .title h2 {
+  margin-bottom: 0.25rem;
+}
+
+.icon-title .title p {
+  font-size: 1.0625rem;
+}
+
 
 main {
   margin-inline: 1rem;

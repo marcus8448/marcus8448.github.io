@@ -1,6 +1,6 @@
 /* screen width <=52em */
 body {
-  background-color: var(--background);
+  background-color: var(--main);
 }
 
 body {
@@ -15,6 +15,18 @@ body {
   border-radius: 0;
   padding-top: 0.5rem;
   height: 100%;
+}
+
+.highlight {
+  width: calc(100%);
+}
+
+main {
+  height: 100%;
+}
+
+.header .subtitle {
+  margin-top: -0.5rem;
 }
 
 @media screen and (min-width: 40em) {
@@ -48,10 +60,12 @@ body {
   }
 }
 
-.highlight {
-  width: calc(100%);
-}
+@media screen and (max-width: 24em) {
+  .header img {
+    width: 3.5rem;
+  }
 
-main {
-    height: 100%;
+  .header .title {
+    font-size: 2.5rem;
+  }
 }

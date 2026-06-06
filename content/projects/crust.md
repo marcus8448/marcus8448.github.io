@@ -24,7 +24,7 @@ tokenization, preprocessing, syntax tree generation, register allocation, and fi
 
 ### Example program
 
-A recursive fibonacci generator
+A recursive Fibonacci number generator
 
 ```rust
 extern fn puts(str: [u8]) -> i32;
