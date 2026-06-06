@@ -1,20 +1,20 @@
----
-title: Chat
-subtitle: An encrypted, ephemeral instant messaging app.
-date: 2023-06-12T12:00:00-00:00
-timeframe: 2023
-icon: /image/chat.png
-description: |
-  An encrypted, ephemeral instant messaging app.
-repository: https://github.com/marcus8448/Chat
-tools:
-  - Java
-  - Gradle
----
++++
+title = "Chat"
+subtitle = "An encrypted, ephemeral instant messaging app."
+date = "2023-06-12T12:00:00-00:00"
+timeframe = 2023
+icon = "/image/chat.png"
+description = """
+An encrypted, ephemeral instant messaging app.
+"""
+repository = "https://github.com/marcus8448/Chat"
+tools = [ "Java", "Gradle" ]
++++
 
-This was a project that I made in approximately 2 weeks to gain more experience with networking and JavaFX.
-It uses a multi-project Gradle build to enable code sharing between the client and server applications,
-while keeping them as separate binaries.
+A internet instant messaging application, written in Java with a focus on user privacy.
+
+The client utilizes JavaFX for windowing and desktop integration,
+while the server makes use of Java's extensive standard library for all networking, encryption and threading operations.
 
 I found it interesting to compare the strengths and weaknesses of different cryptographic ciphers for this project.
 RSA keys are used for client/server identities,
@@ -31,7 +31,7 @@ while AES keys are used to encrypt the session after the initial handshake.
 * Messages are not stored
   * Only those watching a channel will see messages that are sent
   * Upon closing the client, all history is forgotten
-* User account data stored on the client is encrypted with a password using PBKDF2
+* All user account data stored on the client is encrypted with a password using PBKDF2
 
 ## Security
 ### Initial Handshake
@@ -54,5 +54,5 @@ This prevents the user's account data from being used if the file is stolen.
 However, this also means that if the user forgets their password, they will lose all their account data.
 
 ### Disclaimer
-While I hope the application is secure, I cannot guarantee the security of messages sent.
+While I hope the application is secure, I provide no guarantees.
 Use at your own risk!

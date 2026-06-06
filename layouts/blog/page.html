@@ -7,17 +7,20 @@
 <hgroup class="post-heading">
   <h1>{{ .Title }}</h1>
   {{- with .Params.subtitle -}}
-    <p class="subtitle">{{ . }}</p>
+  <p class="subtitle" role="doc-subtitle">{{ . }}</p>
   {{- end -}}
-  <p class="date-meta">Published <time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</time></p>
+  <p class="date-meta"><small>Published <time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</time></small></p>
+  {{- if ne .PublishDate .Lastmod -}}
+  <p class="date-meta"><small>Updated <time datetime='{{ .Lastmod | time.Format "2006-01-02" }}'>{{ .Lastmod | time.Format ":date_long" }} {{ .Lastmod | time.Format ":time_short" }}</time></small></p>
+  {{- end -}}
 </hgroup>
 
 <div class="content">
   {{ .Content }}
 </div>
-{{- if ne .PublishDate .Lastmod -}}
-  <footer style="margin-top: 2rem; border-top: solid 1px var(--text);">
-    <p class="date-meta">Updated on <time datetime='{{ .Lastmod | time.Format "2006-01-02" }}'>{{ .Lastmod | time.Format ":date_long" }}</time></p>
-  </footer>
 {{- end -}}
+
+{{- define "css" -}}
+{{- partial "css.html" "page.css" "page.css" -}}
+{{- partial "css.html" "code.css" "code.css" -}}
 {{- end -}}

@@ -1,15 +1,15 @@
 {{ define "main" }}
 {{ .Content }}
 
-<ul class="list">
+<ul class="index">
   {{ with .Site.GetPage "/blog" }}
     {{ range .RegularPages }}
       <li>
         <article class="post">
-          <div class="info">
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-            <time class="date-meta">{{ .Date | time.Format ":date_medium" }}</time>
-          </div>
+          <hgroup class="title">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="date-meta"><time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_medium" }}</time></p>
+          </hgroup>
           <p class="description">{{ .Params.Description | .RenderString }}</p>
         </article>
       </li>
@@ -17,3 +17,7 @@
   {{ end }}
 </ul>
 {{ end }}
+
+{{- define "css" -}}
+{{- partial "css.html" "posts.css" "posts.css" -}}
+{{- end -}}

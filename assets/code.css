@@ -87,21 +87,25 @@
 /* GenericUnderline */ .chroma .gl {  }
 /* TextWhitespace */ .chroma .w {  }
 
+.highlight {
+  display: block;
+  overflow-x: hidden;
+}
+
 .chroma .line {
   display: block;
   width: 0;
-  height: 1.3rem;
 }
 
 .chroma {
+  display: block;
+  overflow-x: auto;
+
   margin: 0;
   padding: 0.5rem;
   border-radius: 0.375rem;
 }
 
-.chroma > code {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
+.chroma > code::after {
+  content: " ";
 }
-

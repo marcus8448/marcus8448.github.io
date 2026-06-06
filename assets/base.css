@@ -65,13 +65,7 @@ body {
 
 .header img {
   width: 6rem;
-  display: inline-block;
   border-radius: 1rem;
-}
-
-.header hgroup,
-.header h2 {
-  display: inline-block;
 }
 
 .header .title {
@@ -190,10 +184,6 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
   opacity: 1;
 }
 
-.content {
-  text-wrap: pretty;
-}
-
 .content h2,
 .content h3,
 .content h4,
@@ -206,13 +196,14 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
 .content p {
   line-height: 1.5;
   margin-bottom: 0.75rem;
+  text-wrap: pretty;
 }
 
 .content ul,
 .content ol {
   margin-block: 0.125rem;
   padding-left: 1rem;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 .content ul {
@@ -254,11 +245,8 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
   text-decoration-color: var(--link-hover);
 }
 
-.post-heading {
-  margin-bottom: 0.75rem;
-}
-
-.highlight {
-  display: block;
-  overflow-x: hidden;
+ul.index > li {
+  clear: left;
+  padding-inline: 1rem;
+  padding-block: 1rem;
 }

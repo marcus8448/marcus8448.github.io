@@ -1,23 +1,24 @@
----
-title: VEX V5
-date: 2021-11-16T18:07:43-07:00
-icon: /image/vex-v5.png
-timeframe: 2021-2024
-description: |
-  I participated in the <a href="https://www.vexrobotics.com/v5/competition" rel="nofollow">Vex Robotics Competition</a>
-  from 2021-2024.
-repository: https://github.com/marcus8448/VexV5
-tools:
-  - C++
-  - CMake
----
++++
+title = "VEX V5"
+date = "2021-11-16T18:07:43-07:00"
+icon = "/image/vex-v5.png"
+timeframe = "2021-2024"
+subtitle = "Robotics competition"
+description = """
+I participated in the <a href="https://www.vexrobotics.com/v5/competition" rel="nofollow">Vex Robotics Competition</a>
+from 2021-2024.
+"""
+repository = "https://github.com/marcus8448/VexV5"
+tools = [ "C++", "CMake" ]
++++
 
 From 2021-2024, I started competed in the VEX robotics competition.
 Being an embedded C/C++ project, I learned lots about cross compilation and build systems.
 On the robotics side, I learned some basic control theory to make the robot run as smooth as possible.
+It was a fun challenge to work with robots, with measurement error, physical restraints and hardware issues on top of the usual software bugs. 
 
 To improve IDE integration and remove platform-specific build code,
-I translated the program's makefile into a CMake project.
+I converted the default project Makefile into a CMake project.
 
 ## Features
 * Runtime sensor diagnostic information and debug tools on the screen (LVGL)

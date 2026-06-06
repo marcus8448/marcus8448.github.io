@@ -1,17 +1,4 @@
-ul.list {
-  display: block;
-  padding-left: 0;
-
-  > li {
-    display: block;
-    padding-inline: 1rem;
-    padding-block: 1rem;
-    margin-block: -0.5px;
-  }
-}
-
 article.project {
-  display: block;
   min-height: 6rem; /*floating img size*/
 
   .icon {

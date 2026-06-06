@@ -1,13 +1,12 @@
----
-title: v5_cli
-date: 2022-12-12T22:17:00-08:00
-icon: /image/v5_cli.png
-timeframe: 2022-2024
-description: A re-implementation of <a href="https://github.com/purduesigbots/pros-cli" rel="nofollow">pros-cli</a> in Rust, adding bluetooth upload support.
-repository: https://github.com/marcus8448/v5_cli
-tools:
-  - Rust
----
++++
+title = "v5_cli"
+date = "2022-12-12T22:17:00-08:00"
+icon = "/image/v5_cli.png"
+timeframe = "2022-2024"
+description = 'A re-implementation of <a href="https://github.com/purduesigbots/pros-cli" rel="nofollow">pros-cli</a> in Rust, adding bluetooth upload support.'
+repository = "https://github.com/marcus8448/v5_cli"
+tools = [ "Rust" ]
++++
 
 A rewrite of [pros-cli](https://github.com/purduesigbots/pros-cli) in Rust.
 Has largely the same features as the original, with the added feature of direct wireless robot communication and code upload over Bluetooth.

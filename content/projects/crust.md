@@ -1,17 +1,16 @@
----
-title: Crust
-subtitle: Toy compiler
-date: 2024-06-24T22:53:35-07:00
-publishDate: 2025-07-01T08:00:00-07:00
-timeframe: 2023-2024
-icon: /image/crust.png
-description: |
-  A toy programming language and compiler.
-repository: https://github.com/marcus8448/crust
-tools:
-  - C
-  - CMake
----
++++
+title = "Crust"
+subtitle = "Toy programming language and compiler"
+date = "2024-06-24T22:53:35-07:00"
+publishDate = "2025-07-01T08:00:00-07:00"
+timeframe = "2023-2024"
+icon = "/image/crust.png"
+description = """
+A toy programming language and compiler.
+"""
+repository = "https://github.com/marcus8448/crust"
+  tools = [ "C", "CMake" ]
++++
 
 Crust is an experimental compiler for a C-like language with Rust-like syntax.
 Crust supports for loops, conditionals, and external C functions.
