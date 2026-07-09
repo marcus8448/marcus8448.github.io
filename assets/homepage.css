@@ -1,0 +1,19 @@
+main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  @media (min-width: 52em) {
+    height: 10rem;
+  }
+}
+
+main hgroup p {
+  max-width: 33rem;
+  line-height: 1.2;
+}
+
+main hgroup h1 {
+  line-height: 1.3;
+}

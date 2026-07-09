@@ -30,13 +30,12 @@
   {{- partial "desktop-css.html" "desktop.css" "desktop.css" -}}
   {{- end -}}
   {{- block "css" . -}}
-  <!-- -->
   {{- end -}}
 </head>
 <body>
 <a class="a11y-text" href="#main">Skip to main content</a>
 <div class="container">
-  <header class="header">
+  <header class="page-header">
     <div class="heading">
       <!--      <a href="/" aria-label="Homepage" draggable="false">-->
       <img src="https://avatars.githubusercontent.com/u/28928887?size=16" alt="marcus8448's Profile Picture"><!--
@@ -54,12 +53,12 @@
       <li><a href="https://github.com/marcus8448">GitHub</a></li>
     </ul>
   </header>
-  <main id="main" role="main">
+  <main id="main">
     {{- block "main" . -}}
     {{ .Content }}
     {{- end -}}
   </main>
-  <footer>
+  <footer class="page-footer">
     <small>{{ .Site.Copyright | safeHTML }}</small>
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><small>CC&nbsp;BY-NC-SA&nbsp;4.0</small></a>
   </footer>

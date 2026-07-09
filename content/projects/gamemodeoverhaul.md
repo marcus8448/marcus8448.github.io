@@ -14,7 +14,7 @@ curseforge = "gamemodeoverhaul"
 tools = [ "Java", "Gradle" ]
 +++
 
-This was my first published Minecraft modification, originally released in February 2019.
+This was my first published Minecraft mod (modification), originally released in February 2019.
 Created in the span of two weeks, the original goal of this mod was to simply restore the integer `/gamemode` arguments
 which were removed in the recent Minecraft 1.13 update,
 but has since expanded to include other commands and provide helpful aliases.

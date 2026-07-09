@@ -15,7 +15,7 @@ I started to contribute to Galacticraft through issue/bug reports in 2017 and ba
 In 2019, I was invited to work on Galacticraft 5 (called Galacticraft: Rewoven at the time),
 which I contributed to until 2026.
 
-## Key contributions
+## Contribution highlights
 * Implemented a graph-based wire network (power distribution) system
 * Created an extensible framework for making machines (see [MachineLib](/projects/machinelib))
   * Implemented a dynamic (runtime) model generation system for machines,

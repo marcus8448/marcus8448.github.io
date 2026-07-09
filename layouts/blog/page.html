@@ -4,20 +4,25 @@
 {{- end -}}
 
 {{- define "main" -}}
-<hgroup class="post-heading">
-  <h1>{{ .Title }}</h1>
-  {{- with .Params.subtitle -}}
-  <p class="subtitle" role="doc-subtitle">{{ . }}</p>
-  {{- end -}}
-  <p class="date-meta"><small>Published <time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format ":time_short" }}</time></small></p>
-  {{- if ne .PublishDate .Lastmod -}}
-  <p class="date-meta"><small>Updated <time datetime='{{ .Lastmod | time.Format "2006-01-02" }}'>{{ .Lastmod | time.Format ":date_long" }} {{ .Lastmod | time.Format ":time_short" }}</time></small></p>
-  {{- end -}}
-</hgroup>
+<article>
+  <header class="post-heading">
+    <hgroup>
+      <h1>{{ .Title }}</h1>
+      {{- with .Params.subtitle -}}
+      <p class="subtitle" role="doc-subtitle">{{ . }}</p>
+      {{- end -}}
+    </hgroup>
+    <time class="date-meta" datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_long" }} {{ .PublishDate | time.Format "3:04 PM" }}</time>
+  </header>
 
-<div class="content">
-  {{ .Content }}
-</div>
+  <div class="content">
+    {{ .Content }}
+  </div>
+
+  {{- if ne .PublishDate .Lastmod -}}
+  <p class="date-meta">Last updated: <time datetime='{{ .Lastmod | time.Format "2006-01-02" }}'>{{ .Lastmod | time.Format ":date_long" }}</time></p>
+  {{- end -}}
+</article>
 {{- end -}}
 
 {{- define "css" -}}

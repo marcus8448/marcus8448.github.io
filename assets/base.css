@@ -17,8 +17,11 @@ body {
   --main: #f0f5f0;
   --text: #000;
   --meta: oklch(45.1% 0.027 264.364);
-  --link: oklch(58.8% 0.158 241.966);
-  --link-hover: oklch(68.5% 0.169 237.323);
+  --hlh: oklch(17.3% 0 0);
+  --l: oklch(50.0% 0.158 241.966);
+  --lh: oklch(60.0% 0.169 237.323);
+  --il: oklch(40.0% 0.158 241.966);
+  --ilh: oklch(50.0% 0.169 237.323);
 
   @media (prefers-contrast: more) {
     --meta: oklch(44.6% 0.03 256.802);
@@ -26,7 +29,6 @@ body {
 
   display: grid;
   max-width: 100vw;
-  height: 100vh;
   margin: 0;
 
   background-color: var(--bg);
@@ -37,12 +39,34 @@ body {
   tab-size: 4;
   scroll-behavior: smooth;
   place-items: center;
+  text-decoration-color: currentColor;
+}
+
+main {
+  border-bottom: 1px dashed var(--text);
+  border-top: 1px dashed var(--text);
+
+  padding-block: 0.5em;
+}
+
+main:empty {
+  display: none;
+}
+
+footer.page-footer {
+  display: grid;
+  place-items: center;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .date-meta {
   color: var(--meta);
-  margin-top: -0.2rem;
-  margin-bottom: 0.2rem;
+}
+
+.sub {
+  line-height: 1;
+  font-size: 0.9rem;
 }
 
 .container {
@@ -50,48 +74,67 @@ body {
   padding: 1rem;
 }
 
-.header {
+hgroup p,
+/*hgroup h1,*/
+hgroup h2 {
+  line-height: 1;
+}
+
+.page-header {
   display: flex;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
   justify-content: space-between;
 }
 
-.header .heading {
+.page-header .heading {
   display: flex;
   align-items: center;
   gap: 0.25rem;
 }
 
-.header img {
+.page-header .heading img {
   width: 6rem;
   border-radius: 1rem;
 }
 
-.header .title {
+.page-header .heading .title {
   font-size: 4rem;
   margin: 0;
 }
 
-.header .subtitle {
+.page-header .heading .subtitle {
   font-size: 1rem;
   text-align: right;
   text-transform: lowercase;
-  margin-top: -0.75rem;
 }
 
-.header .links {
+.page-header .links {
   display: inline-block;
   text-transform: lowercase;
   text-align: right;
-
-  li {
-    line-height: calc(12 / 9);
-  }
 }
 
-.header a {
+.page-header .links li {
+  line-height: calc(12 / 9);
+}
+
+a[href] {
+  text-decoration: none;
   color: var(--text);
+}
+
+a[href]:hover {
+  text-decoration: none;
+  color: var(--hlh);
+}
+
+.index a[href] {
+  color: var(--il);
+}
+
+.index a[href]:hover {
+  color: var(--ilh);
 }
 
 h1 {
@@ -134,36 +177,34 @@ small {
 }
 
 p, span {
-  line-height: 1.25;
+  line-height: 1.5;
 }
+
+.content a[href] {
+  text-decoration-line: underline;
+  color: var(--l);
+  padding-inline: 0.05rem;
+}
+
+.content a[href]:hover {
+  color: var(--lh);
+}
+
+.content a[href] code {
+  display: inline-block;
+}
+/*.content a[href]:has(code) {*/
+/*  color: var(--cl);*/
+/*}*/
+/*.content a[href]:has(code):hover {*/
+/*  color: var(--clh);*/
+/*}*/
+
 
 ul, ol {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: oklch(40.8% 0.2 241.966);
-}
-
-footer {
-  display: grid;
-  place-items: center;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-}
-
-main {
-  border-bottom: 1px dashed var(--text);
-  border-top: 1px dashed var(--text);
-
-  padding-block: 0.5rem;
-}
-
-main:empty {
-  display: none;
 }
 
 img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
@@ -172,16 +213,22 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
 
 .a11y-text {
   position: absolute;
-  left: 0.25rem;
-  top: 0.25rem;
+  left: 0.5rem;
+  top: 0.5rem;
+
+  overflow: hidden;
   opacity: 0;
-  padding: 0.25rem;
+  padding: 0.1rem 0.2rem;
   background-color: var(--main);
   color: var(--text);
 }
 
 .a11y-text:focus {
   opacity: 1;
+}
+
+.content h1 {
+  line-height: 1.2;
 }
 
 .content h2,
@@ -224,29 +271,12 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
 
 .content li {
   margin-block: 0.125rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .content code:not(.highlight *) {
   border-radius: 0.25rem;
-  padding-inline: 0.2rem;
+  padding: 0 0.2rem 0.025rem 0.2rem;
 
-  background-color: oklch(90% 0.006 264.531);
-}
-
-.content a[href] {
-  text-decoration-line: underline;
-  color: var(--link);
-}
-
-.content a[href]:hover {
-  text-decoration-line: underline;
-  color: var(--link-hover);
-  text-decoration-color: var(--link-hover);
-}
-
-ul.index > li {
-  clear: left;
-  padding-inline: 1rem;
-  padding-block: 1rem;
+  background-color: oklch(92% 0.006 264.531);
 }

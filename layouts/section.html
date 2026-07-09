@@ -1,3 +1,44 @@
 {{ define "main" }}
 {{ .Content }}
+<ul class="index">
+  {{ with .Site.GetPage .Section }}
+  {{ range .RegularPages }}
+  <li>
+    <article class="{{ .Section | strings.ToLower }}">
+      <header>
+        {{ if .Params.icon }}
+        <a href="{{ .RelPermalink }}" class="icon">
+          <img referrerpolicy="no-referrer" src="{{ .Params.icon }}" alt="{{ .Title | plainify | title }}">
+        </a>
+        {{ end }}
+
+        {{ if .Params.tools }}
+        <ul class="tools">
+          {{ range .Params.tools }}
+          <li>
+            {{ $invert := eq (. | lower) "rust" }} <!--to keep formatting nice in HTML class string-->
+            <img src="/icon/{{ . | lower }}.svg" alt="{{ . }} icon" title="{{ . }}"
+                 class="{{ if $invert }} invert-dark {{ end }}">
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+
+        <h2><a href="{{ .RelPermalink }}">{{ .Title | safeHTML }}</a></h2>
+        {{- if .Params.timeframe -}}
+        <p class="date-meta sub">{{ (replace .Params.timeframe "-" "&#8209;") | safeHTML }}</p>
+        {{- else -}}
+        <p class="date-meta"><time datetime='{{ .PublishDate | time.Format "2006-01-02" }}'>{{ .PublishDate | time.Format ":date_medium" }}</time></p>
+        {{- end -}}
+      </header>
+      <p class="description">{{ .Params.Description | safeHTML }}</p>
+    </article>
+  </li>
+  {{ end }}
+  {{ end }}
+</ul>
+{{ end }}
+
+{{ define "css" }}
+{{- partial "css.html" "section.css" "section.css" -}}
 {{ end }}

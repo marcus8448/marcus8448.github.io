@@ -90,6 +90,7 @@
 .highlight {
   display: block;
   overflow-x: hidden;
+  margin-top: -0.5rem;
 }
 
 .chroma .line {
@@ -104,8 +105,4 @@
   margin: 0;
   padding: 0.5rem;
   border-radius: 0.375rem;
-}
-
-.chroma > code::after {
-  content: " ";
 }

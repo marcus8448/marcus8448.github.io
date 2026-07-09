@@ -1,13 +1,7 @@
 /* width >=52em */
-body::after {
-  content: "end";
-  display: block;
-  visibility: hidden;
-  height: 1rem;
-}
-
 body {
-  padding: 1rem;
+  min-height: 70vh;
+  padding: 3rem 1rem;
 }
 
 .container {
@@ -16,6 +10,6 @@ body {
   border-radius: 0.5rem;
 }
 
-.header {
+.page-header {
   padding-bottom: 0.25rem;
 }

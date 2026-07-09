@@ -16,8 +16,7 @@ that interact with items, fluids and energy.
 
 Before MachineLib existed, Galacticraft used [UniversalComponents](https://github.com/CottonMC/UniversalComponents)
 to handle inventories, before transitioning to [LibBlockAttributes](https://github.com/AlexIIL/LibBlockAttributes).
-I decided to try and make my own implementation using the newly standardized
-[transfer api](https://github.com/FabricMC/fabric/pull/1553),
+I decided to try and make my own implementation using the newly standardized transfer api,
 and created this project.
 MachineLib is attempts to take a &ldquo;batteries-included&rdquo; approach,
 with tight integration between the storage and block implementations with a focus on developer ergonomics.

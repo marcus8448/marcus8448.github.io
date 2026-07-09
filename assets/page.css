@@ -1,9 +1,16 @@
 main {
-  padding-inline: 0.5rem;
+  padding-inline: 0.25rem;
+}
+.content {
+  padding-inline: 0.25rem;
 }
 
 .post-heading {
   margin-bottom: 0.75rem;
+}
+
+.post-heading .subtitle {
+  line-height: 1.2;
 }
 
 .icon-title {

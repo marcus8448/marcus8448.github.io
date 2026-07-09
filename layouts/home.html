@@ -1,3 +1,9 @@
 {{- define "main" -}}
 {{ .Content }}
 {{- end -}}
+
+{{- define "css" -}}
+{{- with resources.Get "homepage.css" | minify -}}
+<style>{{ .Content | safeCSS }}</style>
+{{- end -}}
+{{- end -}}

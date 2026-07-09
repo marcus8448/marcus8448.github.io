@@ -1,9 +1,8 @@
 /* screen width <=52em */
 body {
   background-color: var(--main);
-}
 
-body {
+  min-height: 100vh;
   align-items: start;
 }
 
@@ -25,22 +24,18 @@ main {
   height: 100%;
 }
 
-.header .subtitle {
-  margin-top: -0.5rem;
-}
-
 @media screen and (min-width: 40em) {
-  .header .links {
+  .page-header .links {
     margin-right: 0.5rem;
   }
 }
 
 @media screen and (max-width: 40em) {
-  .header {
+  .page-header {
     display: block;
   }
 
-  .header .links {
+  .page-header .links {
     display: flex;
     justify-content: space-between;
     text-align: unset;
@@ -51,21 +46,21 @@ main {
 }
 
 @media screen and (max-width: 33em) {
-  .header img {
+  .page-header .heading img {
     width: 4rem;
   }
 
-  .header .title {
+  .page-header .heading .title {
     font-size: 3rem;
   }
 }
 
 @media screen and (max-width: 24em) {
-  .header img {
+  .page-header .heading img {
     width: 3.5rem;
   }
 
-  .header .title {
+  .page-header .heading .title {
     font-size: 2.5rem;
   }
 }
