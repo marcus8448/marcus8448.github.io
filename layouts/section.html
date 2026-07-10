@@ -2,7 +2,7 @@
 {{ .Content }}
 <ul class="index">
   {{ with .Site.GetPage .Section }}
-  {{ range .RegularPages }}
+  {{ range .RegularPagesRecursive }}
   <li>
     <article class="{{ .Section | strings.ToLower }}">
       <header>

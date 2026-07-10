@@ -17,11 +17,13 @@ body {
   --main: #f0f5f0;
   --text: #000;
   --meta: oklch(45.1% 0.027 264.364);
+  --fig: oklch(40.1% 0.027 264.364);
   --hlh: oklch(17.3% 0 0);
   --l: oklch(50.0% 0.158 241.966);
   --lh: oklch(60.0% 0.169 237.323);
   --il: oklch(40.0% 0.158 241.966);
   --ilh: oklch(50.0% 0.169 237.323);
+  --lt: oklch(92% 0.006 264.531);
 
   @media (prefers-contrast: more) {
     --meta: oklch(44.6% 0.03 256.802);
@@ -43,21 +45,16 @@ body {
 }
 
 main {
-  border-bottom: 1px dashed var(--text);
-  border-top: 1px dashed var(--text);
-
-  padding-block: 0.5em;
 }
 
-main:empty {
-  display: none;
-}
-
-footer.page-footer {
+.page-footer {
   display: grid;
   place-items: center;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
+
+  margin-top: 0.5rem;
+  border-top: 1px dashed var(--text);
 }
 
 .date-meta {
@@ -83,8 +80,10 @@ hgroup h2 {
 .page-header {
   display: flex;
   gap: 0.5rem;
+  padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
   justify-content: space-between;
+  border-bottom: 1px dashed var(--text);
 }
 
 .page-header .heading {
@@ -229,6 +228,7 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
 
 .content h1 {
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 .content h2,
@@ -237,7 +237,8 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
 .content h5,
 .content h6 {
   margin-top: 0.75rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
+  text-wrap: balance;
 }
 
 .content p {
@@ -278,5 +279,27 @@ img[src="https://avatars.githubusercontent.com/u/28928887?size=16"] {
   border-radius: 0.25rem;
   padding: 0 0.2rem 0.025rem 0.2rem;
 
-  background-color: oklch(92% 0.006 264.531);
+  background-color: var(--lt);
+}
+
+.content figure {
+  margin: 0.5rem 0;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
+
+.content figure figcaption {
+  margin-bottom: 0.25rem;
+  font-size: smaller;
+  color: var(--fig);
+}
+
+.content figure img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 0.5rem;
+  align-self: center;
+  margin-inline: 0.5rem;
 }

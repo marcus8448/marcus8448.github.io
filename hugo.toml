@@ -12,12 +12,19 @@ blurb = "Hello world"
   [build.buildStats]
     enable = true
 
-[markuo]
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = false
   [markup.highlight]
     noClasses = false
     style = "nord"
 #    lineNos = true
 #    lineNumbersInTable = false
+
 
 [module]
   [[module.mounts]]

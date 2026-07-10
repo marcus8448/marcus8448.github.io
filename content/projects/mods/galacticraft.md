@@ -17,7 +17,7 @@ which I contributed to until 2026.
 
 ## Contribution highlights
 * Implemented a graph-based wire network (power distribution) system
-* Created an extensible framework for making machines (see [MachineLib](/projects/machinelib))
+* Created an extensible framework for making machines (see [MachineLib](/projects/mods/machinelib))
   * Implemented a dynamic (runtime) model generation system for machines,
     increasing game startup speed **19x**.
 * Designed extensible APIs for both developers and players to extend Galacticraft's functionality 

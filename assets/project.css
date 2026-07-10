@@ -18,14 +18,14 @@ a.badge-link {
 }
 
 a.badge-link:hover {
-  background-color: oklch(86.7% .003 264.542);
+  background-color: oklch(94.7% .003 264.542);
 }
 
 .badges {
-  padding-block: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-block: 1rem;
+  gap: 1rem;
 
   @media screen and (max-width: 40em) {
     flex-direction: column;

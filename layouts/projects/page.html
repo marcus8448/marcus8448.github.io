@@ -4,59 +4,61 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="icon-title">
-  {{- if .Params.icon -}}
-  <img referrerpolicy="no-referrer" src="{{ .Params.icon }}" class="icon" alt="{{ .Title | plainify }}">
-  {{- end -}}
+<article>
+  <header class="icon-title">
+    {{- if .Params.icon -}}
+    <img referrerpolicy="no-referrer" src="{{ .Params.icon }}" class="icon" alt="{{ .Title | plainify }}">
+    {{- end -}}
 
-  <hgroup class="title">
-    <h1>{{ .Title | safeHTML }}</h1>
-    <p role="doc-subtitle">{{ .Params.Subtitle }}</p>
-  </hgroup>
-</div>
+    <hgroup class="title">
+      <h1>{{ .Title | safeHTML }}</h1>
+      <p role="doc-subtitle">{{ .Params.Subtitle }}</p>
+    </hgroup>
+  </header>
 
-<div class="content">
-  {{- .Content -}}
-</div>
+  <div class="content">
+    {{- .Content -}}
+  </div>
 
-<div class="badges">
-  {{- partial "project-button.html" (dict
-  "link" .Params.link
-  "icon" "/icon/external-link.svg"
-  "text" "Project Page"
-  "alt" "External Link Icon"
-  "invert" "true"
-  ) -}}
-  {{ if .Params.modrinth }}
-  {{- partial "project-button.html" (dict
-  "link" (printf "%s%s" "https://modrinth.com/mod/" .Params.modrinth)
-  "icon" "/icon/modrinth.svg"
-  "text" "Modrinth"
-  "alt" "Modrinth Logo"
-  ) -}}
-  {{- end -}}
-  {{- if .Params.curseforge -}}
-  {{- partial "project-button.html" (dict
-  "link" (printf "%s%s" "https://www.curseforge.com/minecraft/mc-mods/" .Params.curseforge)
-  "icon" "/icon/curseforge.svg"
-  "text" "CurseForge"
-  "alt" "CurseForge Logo"
-  ) -}}
-  {{- end -}}
-  {{- partial "project-button.html" (dict
-  "link" .Params.docs
-  "icon" "/icon/book.svg"
-  "text" "Documentation"
-  "alt" "Book Icon"
-  "invert" "true"
-  ) -}}
-  {{- partial "project-button.html" (dict
-  "link" .Params.repository
-  "icon" "/icon/git.svg"
-  "text" "Repository"
-  "alt" "Git Icon"
-  ) -}}
-</div>
+  <footer class="badges">
+    {{- partial "project-button.html" (dict
+    "link" .Params.link
+    "icon" "/icon/external-link.svg"
+    "text" "Project Page"
+    "alt" "External Link Icon"
+    "invert" "true"
+    ) -}}
+    {{ if .Params.modrinth }}
+    {{- partial "project-button.html" (dict
+    "link" (printf "%s%s" "https://modrinth.com/mod/" .Params.modrinth)
+    "icon" "/icon/modrinth.svg"
+    "text" "Modrinth"
+    "alt" "Modrinth Logo"
+    ) -}}
+    {{- end -}}
+    {{- if .Params.curseforge -}}
+    {{- partial "project-button.html" (dict
+    "link" (printf "%s%s" "https://www.curseforge.com/minecraft/mc-mods/" .Params.curseforge)
+    "icon" "/icon/curseforge.svg"
+    "text" "CurseForge"
+    "alt" "CurseForge Logo"
+    ) -}}
+    {{- end -}}
+    {{- partial "project-button.html" (dict
+    "link" .Params.docs
+    "icon" "/icon/book.svg"
+    "text" "Documentation"
+    "alt" "Book Icon"
+    "invert" "true"
+    ) -}}
+    {{- partial "project-button.html" (dict
+    "link" .Params.repository
+    "icon" "/icon/git.svg"
+    "text" "Repository"
+    "alt" "Git Icon"
+    ) -}}
+  </footer>
+</article>
 {{- end -}}
 
 {{- define "css" -}}
